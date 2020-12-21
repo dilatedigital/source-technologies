@@ -1,42 +1,45 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
+import Logo from "../assets/sourcetechnologies-logo.svg"
+import Burger from "../assets/burger.svg"
+import Menu from "./Menu"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const { wpMenu } = useStaticQuery(graphql`
+    {
+      wpMenu(slug: { eq: "main-menu" }) {
+        menuItems {
+          nodes {
+            key: id
+            title: label
+            connectedNode {
+              node {
+                uri
+              }
+            }
+            parentId
+            url
+          }
+        }
+      }
+    }
+  `)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  return (
+    <header>
+      <div className="container-lg">
+        <div className="flex p-4 items-center justify-between">
+          <Link to="/" className="">
+            <Logo className="w-60 md:w-96 xl:w-screen st-logo" />
+          </Link>
+          <div>
+            <Burger className="fill-current text-ct-black xl:hidden" />
+            <Menu menu={wpMenu} />
+          </div>
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header

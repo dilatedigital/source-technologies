@@ -1,3 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Questrial&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    font-family: "Questrial";
+    @apply antialiased;
+  }
+  body {
+    @apply text-ct-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-pop;
+  }
+  .st-logo {
+    max-width: 552px;
+  }
+  .st-ft-logo-container {
+    max-width: 450px;
+    @apply w-full;
+  }
+  .st-ft-logo {
+    max-width: 420px;
+  }
+  .ao-logo {
+    max-width: 89px;
+  }
+  .container-lg {
+    max-width: 1675px;
+  }
+  .container-md {
+    max-width: 1640px;
+  }
+  .container-md,
+  .container-lg {
+    @apply mx-auto w-full;
+  }
+}

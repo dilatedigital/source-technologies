@@ -133,7 +133,7 @@ const Footer = () => {
             )}
             {generalSiteFields.twitter && (
               <a
-                href={generalSiteFields.facebook}
+                href={generalSiteFields.twitter}
                 target="_blank"
                 rel="noreferrer"
                 className="mr-8"
@@ -143,7 +143,7 @@ const Footer = () => {
             )}
             {generalSiteFields.youtube && (
               <a
-                href={generalSiteFields.facebook}
+                href={generalSiteFields.youtube}
                 target="_blank"
                 rel="noreferrer"
               >

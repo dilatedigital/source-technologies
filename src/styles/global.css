@@ -42,4 +42,26 @@
   .container-lg {
     @apply mx-auto w-full;
   }
+  .hero-section h1 br {
+    @apply hidden xl:block;
+  }
+  .heroImage {
+    @apply w-full h-full mt-0 top-0;
+    position: absolute !important;
+  }
+  .heroImage .gatsby-image {
+    @apply object-cover;
+  }
+  .green-line:before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    border-radius: 2px;
+    top: -25px;
+    @apply absolute bg-primary;
+  }
+  .green-line-center:before {
+    @apply mx-auto relative;
+  }
 }

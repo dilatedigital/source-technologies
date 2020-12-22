@@ -25,10 +25,8 @@ const Header = () => {
     }
   `)
 
-  console.log(wpMenu)
-
   return (
-    <header>
+    <header className="xl:absolute xl:w-full xl:z-20">
       <div className="container-lg">
         <div className="flex p-4 items-center justify-between">
           <Link to="/" className="">

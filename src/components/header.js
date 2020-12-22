@@ -25,6 +25,8 @@ const Header = () => {
     }
   `)
 
+  console.log(wpMenu)
+
   return (
     <header>
       <div className="container-lg">

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 const FooterCol = ({ title, menuItems, generalSiteFields }) => {
   let menuItemsLen
-  console.log(generalSiteFields)
+  //console.log(generalSiteFields)
   if (menuItems) {
     menuItemsLen = menuItems.nodes.length
   }

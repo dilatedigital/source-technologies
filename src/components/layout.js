@@ -17,11 +17,6 @@ const Layout = ({ children }) => {
       <Header />
       <main>{children}</main>
 
-      {/* <footer className="mt-auto">
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer> */}
       <Footer />
     </div>
   )

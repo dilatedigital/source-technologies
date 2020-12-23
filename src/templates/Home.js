@@ -4,19 +4,25 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Hero from "../components/Home/Hero"
 import HomeAbout from "../components/Home/HomeAbout"
+import HomeDivision from "../components/Home/HomeDivision"
+import HomeProjects from "../components/Home/HomeProjects"
 
-const Home = ({ data: { wpPage } }) => {
-  console.log(wpPage)
+const Home = ({ data: { wpPage }, data: { allWpDivision } }) => {
   return (
     <Layout>
       <SEO title="Home" />
       <Hero home={true} heroFields={wpPage.homeFields} />
+
       <HomeAbout
-        showLearnMoreButon={wpPage.homeFields.showLearnMoreButon}
+        showLearnMoreButton={wpPage.homeFields.showLearnMoreButton}
         aboutUsContent={wpPage.homeFields.aboutUsContent}
         aboutUsTitle={wpPage.homeFields.aboutUsTitle}
         learnMoreButtonText={wpPage.homeFields.learnMoreButtonText}
+        buttonLink={wpPage.homeFields.buttonLink.uri}
+        showArrow={wpPage.homeFields.showArrow}
       />
+      <HomeDivision nodes={allWpDivision} />
+      <HomeProjects />
     </Layout>
   )
 }
@@ -46,8 +52,24 @@ export const query = graphql`
         }
         showLearnMoreButton
         learnMoreButtonText
+        showArrow
         aboutUsTitle
         aboutUsContent
+        buttonLink {
+          ... on WpPage {
+            uri
+          }
+        }
+      }
+    }
+    allWpDivision {
+      nodes {
+        title
+        divisionFields {
+          iconSvg
+          color
+        }
+        id
       }
     }
   }

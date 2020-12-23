@@ -63,5 +63,32 @@
   }
   .green-line-center:before {
     @apply mx-auto relative;
+    top: -5px;
+    border-radius: 1px;
+  }
+  .text-content p {
+    @apply text-md-lh;
+  }
+  .text-content p:not(:last-child) {
+    @apply mb-15px;
+  }
+  .st-btn {
+    @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter;
+    letter-spacing: 3.2px;
+  }
+  .st-divisions svg {
+    @apply mx-auto text-source-grey fill-current transition;
+  }
+  .st-divisions .blue svg {
+    @apply hover:text-st-blue fill-current;
+  }
+  .st-divisions .red svg {
+    @apply hover:text-st-red fill-current;
+  }
+  .st-divisions .orange svg {
+    @apply hover:text-st-orange fill-current;
+  }
+  .st-divisions .divisions-container div:not(:last-child) {
+    @apply mt-8 md:mt-0;
   }
 }

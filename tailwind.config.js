@@ -11,6 +11,7 @@ module.exports = {
         "st-blue": "#008CD3",
         "st-red": "#ED1C24",
         "st-orange": "#F26622",
+        "light-grey": "#f7f7f7",
       },
       ringColor: {
         primary: "#B2D234",
@@ -47,6 +48,8 @@ module.exports = {
         "90px": "90px",
         "110px": "110px",
         "120px": "120px",
+        "210px": "210px",
+        "270px": "270px",
       },
       maxWidth: {
         btn: "215px",

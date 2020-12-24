@@ -13,9 +13,7 @@ const HomeAbout = ({
   return (
     <section className="container-md px-4 py-14 xl:py-40">
       <div className="text-center max-w-750px mx-auto">
-        <h2 className="green-line green-line-center relative text-3xl font-semibold mb-20px xl:text-h2">
-          {aboutUsTitle}
-        </h2>
+        <h2 className="green-line green-line-center st-h2">{aboutUsTitle}</h2>
         <div
           dangerouslySetInnerHTML={{ __html: aboutUsContent }}
           className="text-content mb-8"

@@ -75,14 +75,14 @@ const ProjectSlider = ({ nodes: { nodes } }) => {
           aria-label="Previous Slide"
           className="slider-btn slider-btn-prev"
         >
-          <CgArrowLeft className="text-2xl" />
+          <CgArrowLeft className="text-3xl" />
         </button>
         <button
           onClick={next}
           aria-label="Next Slide"
           className="slider-btn slider-btn-next"
         >
-          <CgArrowRight className="text-2xl" />
+          <CgArrowRight className="text-3xl" />
         </button>
       </div>
     </section>

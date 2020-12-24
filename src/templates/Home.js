@@ -6,13 +6,14 @@ import Hero from "../components/Home/Hero"
 import HomeAbout from "../components/Home/HomeAbout"
 import HomeDivision from "../components/Home/HomeDivision"
 import HomeProjects from "../components/Home/HomeProjects"
+import HomeSource from "../components/Home/HomeSource"
 
 const Home = ({
   data: { wpPage },
   data: { allWpDivision },
   data: { allWpProject },
 }) => {
-  //console.log(allWpProject)
+  //console.log(wpPage)
   return (
     <Layout>
       <SEO title="Home" />
@@ -31,6 +32,10 @@ const Home = ({
         title={wpPage.homeFields.projectsTitle}
         showSlider={wpPage.homeFields.showProjectSlider}
         slider={allWpProject}
+      />
+      <HomeSource
+        title={wpPage.homeFields.sourceTechTitle}
+        content={wpPage.homeFields.sourceTechContent}
       />
     </Layout>
   )
@@ -71,6 +76,8 @@ export const query = graphql`
         }
         showProjectSlider
         projectsTitle
+        sourceTechContent
+        sourceTechTitle
       }
     }
     allWpDivision {

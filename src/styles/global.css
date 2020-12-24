@@ -19,126 +19,127 @@
   h5 {
     @apply font-pop;
   }
-  .st-logo {
-    max-width: 552px;
+}
+
+.st-logo {
+  max-width: 552px;
+}
+.st-ft-logo-container {
+  max-width: 450px;
+  @apply w-full;
+}
+.st-ft-logo {
+  max-width: 420px;
+}
+.ao-logo {
+  max-width: 89px;
+}
+.container-lg {
+  max-width: 1675px;
+}
+.container-md {
+  max-width: 1640px;
+}
+.slider-container {
+  max-width: 1370px;
+}
+.container-md,
+.container-lg {
+  @apply mx-auto w-full;
+}
+.hero-section h1 br {
+  @apply hidden xl:block;
+}
+.heroImage {
+  @apply w-full h-full mt-0 top-0;
+  position: absolute !important;
+}
+.heroImage .gatsby-image {
+  @apply object-cover;
+}
+.green-line:before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 40px;
+  border-radius: 2px;
+  top: -25px;
+  @apply absolute bg-primary;
+}
+.green-line-center:before {
+  @apply mx-auto relative;
+  top: -5px;
+  border-radius: 1px;
+}
+.text-content p {
+  @apply text-md-lh;
+}
+.text-content p:not(:last-child) {
+  @apply mb-15px;
+}
+.st-btn {
+  @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter;
+  letter-spacing: 3.2px;
+}
+.st-divisions svg {
+  @apply mx-auto text-source-grey fill-current transition;
+}
+.st-divisions .blue svg {
+  @apply hover:text-st-blue fill-current;
+}
+.st-divisions .red svg {
+  @apply hover:text-st-red fill-current;
+}
+.st-divisions .orange svg {
+  @apply hover:text-st-orange fill-current;
+}
+.st-divisions .divisions-container div:not(:last-child) {
+  @apply mt-8 md:mt-0;
+}
+.custom-slider .slider-info {
+  @apply hidden;
+}
+.custom-slider .slick-current .slider-info {
+  @apply block;
+}
+.custom-slider .slider-image-container {
+  @apply w-slider-img-default h-slider-img-default rounded-xl;
+}
+.custom-slider .slick-slide > div {
+  @apply w-full max-w-slider-img-default;
+}
+.custom-slider .slick-slide.slick-current > div {
+  @apply max-w-slider-img-active;
+}
+.custom-slider .slick-current .slider-image-container {
+  @apply w-full h-slider-img-mobile xl:w-slider-img-active xl:h-slider-img-active;
+}
+.custom-slider .slider-image-container:before,
+.custom-slider .slider-image-container:after {
+  @apply rounded-3xl;
+}
+.custom-slider p {
+  @apply text-slider-p;
+}
+.custom-slider .slick-slide {
+  @apply mt-0 xl:mt-110px;
+}
+.slider-btn {
+  @apply rounded-full flex items-center justify-center border-ct-black border-opacity-30 border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 left-0;
+  height: 50px;
+  width: 50px;
+}
+.slider-btn-container {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 1280px) {
+  .custom-slider .slick-active.slick-slide {
+    width: 355px !important;
+    @apply transition;
   }
-  .st-ft-logo-container {
-    max-width: 450px;
-    @apply w-full;
-  }
-  .st-ft-logo {
-    max-width: 420px;
-  }
-  .ao-logo {
-    max-width: 89px;
-  }
-  .container-lg {
-    max-width: 1675px;
-  }
-  .container-md {
-    max-width: 1640px;
-  }
-  .slider-container {
-    max-width: 1370px;
-  }
-  .container-md,
-  .container-lg {
-    @apply mx-auto w-full;
-  }
-  .hero-section h1 br {
-    @apply hidden xl:block;
-  }
-  .heroImage {
-    @apply w-full h-full mt-0 top-0;
-    position: absolute !important;
-  }
-  .heroImage .gatsby-image {
-    @apply object-cover;
-  }
-  .green-line:before {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 40px;
-    border-radius: 2px;
-    top: -25px;
-    @apply absolute bg-primary;
-  }
-  .green-line-center:before {
-    @apply mx-auto relative;
-    top: -5px;
-    border-radius: 1px;
-  }
-  .text-content p {
-    @apply text-md-lh;
-  }
-  .text-content p:not(:last-child) {
-    @apply mb-15px;
-  }
-  .st-btn {
-    @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter;
-    letter-spacing: 3.2px;
-  }
-  .st-divisions svg {
-    @apply mx-auto text-source-grey fill-current transition;
-  }
-  .st-divisions .blue svg {
-    @apply hover:text-st-blue fill-current;
-  }
-  .st-divisions .red svg {
-    @apply hover:text-st-red fill-current;
-  }
-  .st-divisions .orange svg {
-    @apply hover:text-st-orange fill-current;
-  }
-  .st-divisions .divisions-container div:not(:last-child) {
-    @apply mt-8 md:mt-0;
-  }
-  .custom-slider .slider-info {
-    @apply hidden;
-  }
-  .custom-slider .slick-current .slider-info {
-    @apply block;
-  }
-  .custom-slider .slider-image-container {
-    @apply w-slider-img-default h-slider-img-default rounded-xl;
-  }
-  .custom-slider .slick-slide > div {
-    @apply w-full max-w-slider-img-default;
-  }
-  .custom-slider .slick-slide.slick-current > div {
-    @apply max-w-slider-img-active !important;
-  }
-  .custom-slider .slick-current .slider-image-container {
-    @apply w-full h-slider-img-mobile xl:w-slider-img-active xl:h-slider-img-active;
-  }
-  .custom-slider .slider-image-container:before,
-  .custom-slider .slider-image-container:after {
-    @apply rounded-3xl;
-  }
-  .custom-slider p {
-    @apply text-slider-p;
-  }
-  .custom-slider .slick-slide {
-    @apply mt-0 xl:mt-110px;
-  }
-  .slider-btn {
-    @apply rounded-full flex items-center justify-center border-ct-black border-opacity-30 border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 left-0;
-    height: 50px;
-    width: 50px;
-  }
-  .slider-btn-container {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  @media (min-width: 1280px) {
-    .custom-slider .slick-active.slick-slide {
-      width: 355px !important;
-      @apply transition;
-    }
-    .custom-slider .slick-slide.slick-current {
-      width: 510px !important;
-      @apply mx-75px mt-0;
-    }
+  .custom-slider .slick-slide.slick-current {
+    width: 510px !important;
+    @apply mx-75px mt-0;
   }
 }

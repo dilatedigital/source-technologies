@@ -7,7 +7,12 @@ import HomeAbout from "../components/Home/HomeAbout"
 import HomeDivision from "../components/Home/HomeDivision"
 import HomeProjects from "../components/Home/HomeProjects"
 
-const Home = ({ data: { wpPage }, data: { allWpDivision } }) => {
+const Home = ({
+  data: { wpPage },
+  data: { allWpDivision },
+  data: { allWpProject },
+}) => {
+  //console.log(allWpProject)
   return (
     <Layout>
       <SEO title="Home" />
@@ -22,7 +27,11 @@ const Home = ({ data: { wpPage }, data: { allWpDivision } }) => {
         showArrow={wpPage.homeFields.showArrow}
       />
       <HomeDivision nodes={allWpDivision} />
-      <HomeProjects />
+      <HomeProjects
+        title={wpPage.homeFields.projectsTitle}
+        showSlider={wpPage.homeFields.showProjectSlider}
+        slider={allWpProject}
+      />
     </Layout>
   )
 }
@@ -60,6 +69,8 @@ export const query = graphql`
             uri
           }
         }
+        showProjectSlider
+        projectsTitle
       }
     }
     allWpDivision {
@@ -69,6 +80,24 @@ export const query = graphql`
           iconSvg
           color
         }
+        id
+      }
+    }
+    allWpProject {
+      nodes {
+        featuredImage {
+          node {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        title
+        excerpt
         id
       }
     }

@@ -14,7 +14,7 @@ export const firstWordBr = string => {
 }
 
 const HomeDivision = ({ nodes: { nodes } }) => {
-  console.log(nodes)
+  //console.log(nodes)
 
   return (
     <section className="container-md px-4 mx-auto st-divisions py-14 xl:py-0">

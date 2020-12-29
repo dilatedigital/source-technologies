@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { flatListToHierarchical } from "../utils/flastListToHeirarchical"
+import { FiChevronDown } from "react-icons/fi"
 
 const Menu = ({ menu }) => {
   const menuItems = flatListToHierarchical(menu.menuItems.nodes)
@@ -21,8 +22,14 @@ const Menu = ({ menu }) => {
           )
         } else {
           return (
-            <li key={menuItem.key} className="mr-16 font-pop text-ct-black">
+            <li
+              key={menuItem.key}
+              className="mr-16 font-pop text-ct-black flex items-center"
+            >
               {menuItem.title}
+              {menuItem.children.length > 0 && (
+                <FiChevronDown className="ml-2" />
+              )}
             </li>
           )
         }

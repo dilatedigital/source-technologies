@@ -9,9 +9,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Source Technologies`,
+    title: `Source Technologies AU`,
     description: `Gatsby powered site for Source Technologies`,
     author: `Dilate Digital - Jejomar Dorongon`,
+    image: "/default_img.jpg",
+    siteUrl: `https://pensive-lamport-883e2b.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

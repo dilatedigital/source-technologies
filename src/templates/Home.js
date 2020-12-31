@@ -16,7 +16,15 @@ const Home = ({
   //console.log(wpPage)
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title={wpPage.seo.title}
+        description={wpPage.seo.metaDesc}
+        image={
+          wpPage.seo.opengraphImage
+            ? wpPage.seo.opengraphImage.localFile.publicURL
+            : null
+        }
+      />
       <Hero home={true} heroFields={wpPage.homeFields} />
 
       <HomeAbout
@@ -50,6 +58,11 @@ export const query = graphql`
       seo {
         metaDesc
         title
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
       }
       homeFields {
         heroText
@@ -97,7 +110,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1920, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

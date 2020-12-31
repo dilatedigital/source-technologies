@@ -38,7 +38,7 @@ const ProjectSlider = ({ nodes: { nodes } }) => {
     ],
   }
 
-  console.log(nodes)
+  //console.log(nodes)
 
   return (
     <section className="container-md mx-auto relative">

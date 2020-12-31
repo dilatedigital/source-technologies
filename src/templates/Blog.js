@@ -4,9 +4,11 @@ import EachBlogItem from "../components/Blog/EachBlogItem"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc"
+import SEO from "../components/seo"
 
 const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
   //console.log(pageContext)
+  console.log(allWpPost.edges)
   const { currentPage, numPages } = pageContext
 
   const prevPage = currentPage - 1 === 1 ? `/news` : `/news/${currentPage - 1}`
@@ -16,6 +18,15 @@ const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
 
   return (
     <Layout>
+      <SEO
+        title={wpPage.seo.title}
+        description={wpPage.seo.metaDesc}
+        image={
+          wpPage.seo.opengraphImage
+            ? wpPage.seo.opengraphImage.localFile.publicURL
+            : null
+        }
+      />
       <Hero
         home={false}
         heroFields={wpPage.innerPagesHeroFields}
@@ -52,7 +63,7 @@ const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
                     i + 1 === currentPage
                       ? "bg-primary text-white hover:bg-primary-lighter"
                       : "bg-light-grey hover:bg-gray-50"
-                  } flex items-center justify-center mr-4`}
+                  } flex items-center justify-center mr-4 focus:ring-2 focus:ring-primary active:ring-2 active:ring-primary focus:outline-none`}
                 >
                   {i + 1}
                 </Link>
@@ -90,7 +101,7 @@ export const query = graphql`
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 1920, quality: 100) {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
@@ -107,6 +118,11 @@ export const query = graphql`
       seo {
         metaDesc
         title
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
       }
       innerPagesHeroFields {
         heroImage {

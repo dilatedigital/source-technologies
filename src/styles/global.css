@@ -51,7 +51,8 @@
 }
 .container-inner,
 .container-md,
-.container-lg {
+.container-lg,
+.container-sm {
   @apply mx-auto w-full;
 }
 .hero-section h1 br {
@@ -154,6 +155,7 @@
 .each-blog .each-blog-img:before {
   @apply rounded-t-30px;
 }
+
 .container-inner .each-blog:not(:last-child) {
   @apply mb-8 xl:mb-0;
 }
@@ -164,6 +166,27 @@
   width: 55px;
   height: 50px;
   border-radius: 15px;
+}
+
+.sb-featured:after,
+.sb-featured:before {
+  @apply rounded-30px;
+}
+.sb-content p {
+  @apply text-single-blog-p;
+}
+.sb-content p:not(:last-child) {
+  @apply mb-20px;
+}
+.prev-next-container:after {
+  content: "";
+  width: 1px;
+  left: 50%;
+  background-color: #656565;
+  @apply absolute block h-full;
+}
+.social-btns-row button:not(:last-child) {
+  @apply mr-4;
 }
 @media (min-width: 1280px) {
   .custom-slider .slick-active.slick-slide {

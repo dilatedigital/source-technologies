@@ -17,6 +17,17 @@ const query = `
       node {
         uri
         id
+        categories {
+          nodes {
+            name
+          }
+        }
+      }
+      next {
+        id
+      }
+      previous {
+        id
       }
     }
   }
@@ -40,6 +51,9 @@ exports.createPages = async ({ actions, graphql }) => {
       case "Home Template":
         template = path.resolve("./src/templates/Home.js")
         break
+      case "Divisions Template":
+        template = path.resolve("./src/templates/Divisions.js")
+        break
       default:
         template = path.resolve("./src/templates/BasicPage.js")
     }
@@ -50,6 +64,23 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         id: page.id,
         slug: page.uri,
+      },
+    })
+  })
+
+  data.allWpPost.edges.forEach(post => {
+    //console.log(post.node.categories.nodes)
+    const previousId = post.previous == null ? "null" : post.previous.id
+    const nextId = post.next == null ? "null" : post.next.id
+    actions.createPage({
+      path: `/news${post.node.uri}`,
+      component: path.resolve("./src/templates/SingleBlog.js"),
+      context: {
+        id: post.node.id,
+        nextPage: nextId,
+        previousPage: previousId,
+        uri: post.node.uri,
+        cat: post.node.categories.nodes[0].name,
       },
     })
   })

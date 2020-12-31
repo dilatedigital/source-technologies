@@ -26,7 +26,7 @@ const Header = () => {
   `)
 
   return (
-    <header className="xl:absolute xl:w-full xl:z-20">
+    <header className="xl:absolute xl:w-full xl:z-20 border-b border-gray-200 xl:border-none">
       <div className="container-lg">
         <div className="flex p-4 items-center justify-between">
           <Link to="/" className="">

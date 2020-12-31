@@ -52,7 +52,7 @@ function SEO({ description, lang, meta, title, image }) {
         lang,
       }}
       title={title}
-      titleTemplate={title ? `%s | ${defaultTitle}` : null}
+      //titleTemplate={title ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,

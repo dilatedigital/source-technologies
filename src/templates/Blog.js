@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 
 const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
   //console.log(pageContext)
-  console.log(allWpPost.edges)
+  //console.log(allWpPost.edges)
   const { currentPage, numPages } = pageContext
 
   const prevPage = currentPage - 1 === 1 ? `/news` : `/news/${currentPage - 1}`

@@ -10,6 +10,7 @@
   }
   body {
     @apply text-ct-black;
+    scroll-behavior: smooth;
   }
 
   h1,
@@ -86,13 +87,15 @@
   @apply mb-15px;
 }
 .text-content p,
-.source-tech-section p {
+.source-tech-section p,
+.each-division-content {
   @apply text-md-lh;
 }
 .text-content p:not(:last-child) {
   @apply mb-15px;
 }
-.source-tech-section p:not(:last-child) {
+.source-tech-section p:not(:last-child),
+.each-division-content p:not(:last-child) {
   @apply mb-15px xl:mb-35px;
 }
 .st-btn {
@@ -101,6 +104,18 @@
 }
 .st-divisions svg {
   @apply mx-auto text-source-grey fill-current transition;
+}
+.each-division svg {
+  @apply mx-auto;
+}
+.each-division .blue {
+  @apply text-st-blue fill-current;
+}
+.each-division .red {
+  @apply text-st-red fill-current;
+}
+.each-division .orange {
+  @apply text-st-orange fill-current;
 }
 .st-divisions .blue svg {
   @apply hover:text-st-blue fill-current;

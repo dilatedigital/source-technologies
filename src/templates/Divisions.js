@@ -1,5 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
+import EachDivision from "../components/Divisions/EachDivision"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,7 +10,9 @@ const Divisions = ({
     wpPage: { title },
   },
   data: { wpPage },
+  data: { allWpDivision },
 }) => {
+  //console.log(allWpDivision)
   return (
     <Layout>
       <SEO
@@ -26,6 +29,9 @@ const Divisions = ({
         title={title}
         heroFields={wpPage.innerPagesHeroFields}
       />
+      <div className="container-lg px-4 py-14">
+        <EachDivision nodes={allWpDivision} />
+      </div>
     </Layout>
   )
 }
@@ -49,6 +55,33 @@ export const query = graphql`
             childImageSharp {
               fluid(maxWidth: 1920, quality: 100) {
                 ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+    allWpDivision(sort: { order: DESC, fields: date }) {
+      nodes {
+        title
+        id
+        content
+        slug
+        divisionFields {
+          buttonText
+          buttonUrl
+          color
+          iconSvg
+          showButton
+          images {
+            imageTitle
+            image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 390, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }

@@ -69,6 +69,7 @@ module.exports = {
         "645px": "645px",
         "750px": "750px",
         "815px": "815px",
+        "1090px": "1090px",
         "1400px": "1400px",
         "435px": "435px",
         "slider-img-default": "355px",

@@ -93,7 +93,7 @@ export const query = graphql`
         sourceTechTitle
       }
     }
-    allWpDivision {
+    allWpDivision(sort: { order: DESC, fields: date }) {
       nodes {
         title
         divisionFields {
@@ -101,6 +101,7 @@ export const query = graphql`
           color
         }
         id
+        slug
       }
     }
     allWpProject {

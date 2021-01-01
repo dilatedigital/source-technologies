@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export const firstWordBr = string => {
   let splitedString = string.split(" ")
@@ -25,7 +26,11 @@ const HomeDivision = ({ nodes: { nodes } }) => {
       >
         {nodes.map(division => {
           return (
-            <div key={division.id}>
+            <AnchorLink
+              key={division.id}
+              to={`/divisions/#${division.slug}`}
+              stripHash={true}
+            >
               <div
                 dangerouslySetInnerHTML={{
                   __html: division.divisionFields.iconSvg,
@@ -35,7 +40,7 @@ const HomeDivision = ({ nodes: { nodes } }) => {
               <h3 className="font-semibold text-center text-larger mt-4 md:mt-8">
                 {firstWordBr(division.title)}
               </h3>
-            </div>
+            </AnchorLink>
           )
         })}
       </div>

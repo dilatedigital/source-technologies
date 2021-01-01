@@ -49,6 +49,7 @@ module.exports = {
         "30px": "30px",
         "35px": "35px",
         "40px": "40px",
+        "45px": "45px",
         "50px": "50px",
         "70px": "70px",
         "75px": "75px",
@@ -58,6 +59,7 @@ module.exports = {
         "110px": "110px",
         "120px": "120px",
         "130px": "130px",
+        "150px": "150px",
         "210px": "210px",
         "220px": "220px",
         "270px": "270px",
@@ -65,6 +67,7 @@ module.exports = {
       maxWidth: {
         btn: "215px",
         "120px": "120px",
+        "385px": "385px",
         "600px": "600px",
         "645px": "645px",
         "750px": "750px",
@@ -78,6 +81,7 @@ module.exports = {
       width: {
         "slider-img-default": "355px",
         "slider-img-active": "510px",
+        "385px": "385px",
       },
       height: {
         hero: "calc(100vh + 100px)",
@@ -91,6 +95,7 @@ module.exports = {
         "each-blog-md": "465px",
         "single-feature": "550px",
         "related-img": "315px",
+        "400px": "400px",
       },
       borderRadius: {
         "30px": "30px",

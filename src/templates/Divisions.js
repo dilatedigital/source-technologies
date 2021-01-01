@@ -29,7 +29,7 @@ const Divisions = ({
         title={title}
         heroFields={wpPage.innerPagesHeroFields}
       />
-      <div className="container-lg px-4 py-14">
+      <div className="container-lg px-4 pt-14 pb-4">
         <EachDivision nodes={allWpDivision} />
       </div>
     </Layout>
@@ -76,6 +76,7 @@ export const query = graphql`
           images {
             imageTitle
             image {
+              id
               localFile {
                 childImageSharp {
                   fluid(maxWidth: 390, quality: 100) {

@@ -35,6 +35,9 @@
 .ao-logo {
   max-width: 89px;
 }
+.menu-item:hover .submenu {
+  @apply block;
+}
 .container-lg {
   max-width: 1675px;
 }

@@ -18,7 +18,10 @@ const query = graphql`
 
 const Hero = ({ home, heroFields, title }) => {
   const { heroImage } = useStaticQuery(query)
-
+  const heroText = heroFields.heroText
+    ? heroFields.heroText
+    : heroFields.bannerContent
+  //console.log(heroFields)
   return (
     <section
       className={`hero-section relative h-80 ${
@@ -44,10 +47,10 @@ const Hero = ({ home, heroFields, title }) => {
             home ? "xl:mb-35px xl:-mt-15px" : "xl:mb-0 xl:-mt-85px"
           } `}
         />
-        {heroFields.heroText && (
+        {heroText && (
           <div
-            dangerouslySetInnerHTML={{ __html: heroFields.heroText }}
-            className="text-md max-w-600px"
+            dangerouslySetInnerHTML={{ __html: heroText }}
+            className={`text-md ${home ? "max-w-600px" : "max-w-400px mt-4"} `}
           />
         )}
       </div>

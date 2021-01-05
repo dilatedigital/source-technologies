@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image"
 
 const EachDivision = ({ nodes }) => {
-  console.log(nodes)
+  //console.log(nodes)
   return (
     <section className="xl:pt-50px st-division">
       {nodes.nodes.map(node => {

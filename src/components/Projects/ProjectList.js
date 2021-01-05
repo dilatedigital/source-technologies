@@ -6,14 +6,16 @@ import EachBlogItem from "../Blog/EachBlogItem"
 const searchProjects = gql`
   query searchPosts($searchTerm: String!) {
     projects(where: { search: $searchTerm }) {
-      nodes {
-        title
-        uri
-        content
-        featuredImage {
-          node {
-            sourceUrl
-            altText
+      edges {
+        node {
+          title
+          uri
+          content
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
           }
         }
       }
@@ -53,7 +55,7 @@ const ProjectList = ({ searchTerm }) => {
     )
   if (error) return `Error! ${error.message}`
 
-  const projectsFound = !!data?.projects.nodes.length
+  const projectsFound = !!data?.projects.edges.length
 
   if (!projectsFound) {
     return <p className="text-center py-12">No matching posts found.</p>
@@ -62,9 +64,10 @@ const ProjectList = ({ searchTerm }) => {
   return (
     <div className="px-4 py-14 container-inner mx-auto">
       <div className="xl:pt-75px xl:pb-100px xl:grid xl:grid-cols-2 xl:gap-20">
-        {data.projects.nodes.map(project => {
-          //console.log(project)
-          return <EachBlogItem mainBlog={true} proj={true} node={project} />
+        {data.projects.edges.map(project => {
+          return (
+            <EachBlogItem mainBlog={true} proj={true} node={project.node} />
+          )
         })}
       </div>
     </div>

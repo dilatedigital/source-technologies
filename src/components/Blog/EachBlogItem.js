@@ -25,7 +25,7 @@ const EachBlogItem = ({ node, mainBlog, proj }) => {
         <div className="md:h-each-blog-md">
           <img
             src={node.featuredImage.node.sourceUrl}
-            className="object-cover lg:h-full"
+            className="object-cover lg:h-full w-full"
             loading="lazy"
             alt={node.featuredImage.node.altText}
           />

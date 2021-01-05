@@ -14,6 +14,7 @@ module.exports = {
         "light-grey": "#f7f7f7",
         "paginate-black": "#121212",
         "disabled-grey": "#ccc",
+        "border-grey": "#707070",
       },
       ringColor: {
         primary: "#B2D234",
@@ -68,6 +69,7 @@ module.exports = {
         btn: "215px",
         "120px": "120px",
         "385px": "385px",
+        "400px": "400px",
         "600px": "600px",
         "645px": "645px",
         "750px": "750px",

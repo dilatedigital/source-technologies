@@ -8,7 +8,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 const Menu = ({ menu, phone }) => {
   const menuItems = flatListToHierarchical(menu.menuItems.nodes)
 
-  console.log(menuItems)
+  //console.log(menuItems)
 
   return (
     <ul className="hidden xl:flex items-center justify-center">

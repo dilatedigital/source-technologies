@@ -1,12 +1,28 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import { graphql } from "gatsby"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SearchForm from "../components/Projects/SearchForm"
+import { ApolloProvider } from "@apollo/client"
+import { client } from "../services/apollo"
+import ProjectList from "../components/Projects/ProjectList"
+import { debounce } from "lodash"
 
 const Projects = ({ data: { wpPage } }) => {
   const [searchTerm, setSearchTerm] = useState("")
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("")
+
+  const setDebouncedSearchTermMemoized = useMemo(
+    () => debounce(setDebouncedSearchTerm, 300),
+    []
+  )
+
+  function handleSearchTermChange(newSearchTerm) {
+    setSearchTerm(newSearchTerm)
+    setDebouncedSearchTermMemoized(newSearchTerm)
+  }
+
   return (
     <Layout>
       <SEO
@@ -23,7 +39,13 @@ const Projects = ({ data: { wpPage } }) => {
         title={wpPage.title}
         heroFields={wpPage.innerPagesHeroFields}
       />
-      <SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <ApolloProvider client={client}>
+        <SearchForm
+          searchTerm={searchTerm}
+          handleSearchTermChange={handleSearchTermChange}
+        />
+        <ProjectList searchTerm={debouncedSearchTerm} />
+      </ApolloProvider>
     </Layout>
   )
 }

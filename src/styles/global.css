@@ -229,6 +229,12 @@
   top: 18px;
   left: 18px;
 }
+.st-spinner svg {
+  @apply animate-spin -ml-1 mr-3 h-12 w-12 text-primary;
+}
+.st-spinner svg circle {
+  @apply opacity-25 stroke-current;
+}
 @media (min-width: 1280px) {
   .custom-slider .slick-active.slick-slide {
     width: 355px !important;

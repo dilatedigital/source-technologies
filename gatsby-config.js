@@ -37,6 +37,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-apollo",
+      options: {
+        uri: process.env.GATSBY_WPGRAPHQL_URL,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {

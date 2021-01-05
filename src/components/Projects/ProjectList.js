@@ -58,7 +58,7 @@ const ProjectList = ({ searchTerm }) => {
 
   if (loading)
     return (
-      <div className="flex justify-center px-4 py-12">
+      <div className="flex justify-center px-4 py-12 st-spinner">
         <Loading />
       </div>
     )
@@ -88,7 +88,7 @@ const ProjectList = ({ searchTerm }) => {
             Load more
           </button>
           {fetchingNextPage && (
-            <div className="flex justify-center px-4 py-12">
+            <div className="flex justify-center px-4 py-12 st-spinner">
               <Loading />
             </div>
           )}

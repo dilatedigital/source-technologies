@@ -102,7 +102,7 @@
   @apply mb-15px xl:mb-35px;
 }
 .st-btn {
-  @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center text-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter;
+  @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center text-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter focus:outline-none focus:ring-2 focus:ring-primary;
   letter-spacing: 3.2px;
 }
 .st-divisions svg {
@@ -223,6 +223,11 @@
 }
 .social-btns-row button:not(:last-child) {
   @apply mr-4;
+}
+.search-form svg {
+  font-size: 24px;
+  top: 18px;
+  left: 18px;
 }
 @media (min-width: 1280px) {
   .custom-slider .slick-active.slick-slide {

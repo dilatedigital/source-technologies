@@ -16,12 +16,36 @@ const query = graphql`
   }
 `
 
-const Hero = ({ home, heroFields, title }) => {
+const Hero = ({ home, heroFields, title, project }) => {
+  //fallback banner if there's no supplied hero image
   const { heroImage } = useStaticQuery(query)
-  const heroText = heroFields.heroText
+
+  //hero content
+  let heroText = heroFields?.heroText
     ? heroFields.heroText
-    : heroFields.bannerContent
+    : heroFields?.bannerContent
+  if (project) {
+    heroText = ""
+  }
+
+  //hero title
+  const bannerTitle = title ? title : heroFields.title
+
+  //console.log(heroFields.heroImage)
+
+  let bannerImage
+
   //console.log(heroFields)
+
+  if (!heroFields.heroImage && !project) {
+    bannerImage = heroImage.childImageSharp.fluid
+  } else if (typeof heroFields.heroImage == "undefined") {
+    bannerImage = heroFields.node.localFile.childImageSharp.fluid
+    console.log(typeof heroFields.heroImage)
+  } else {
+    bannerImage = heroFields.heroImage.localFile.childImageSharp.fluid
+  }
+
   return (
     <section
       className={`hero-section relative h-80 ${
@@ -30,10 +54,10 @@ const Hero = ({ home, heroFields, title }) => {
     >
       <div
         className={`relative z-10 px-4 ${
-          home ? "container-lg  xl:h-hero-content" : "xl:h-auto container-inner"
-        }`}
+          home && !project ? "xl:h-hero-content" : "xl:h-auto"
+        } ${!home && !project ? "container-inner" : "container-lg"}`}
       >
-        {heroFields.suptitle && (
+        {heroFields?.suptitle && (
           <h4 className="font-quest text-md relative xl:-top-50px green-line">
             {heroFields.suptitle}
           </h4>
@@ -41,11 +65,11 @@ const Hero = ({ home, heroFields, title }) => {
 
         <h1
           dangerouslySetInnerHTML={{
-            __html: heroFields.title ? heroFields.title : title,
+            __html: bannerTitle,
           }}
           className={`text-4xl mb-2 mt-2 xl:text-hero-h1 font-medium ${
             home ? "xl:mb-35px xl:-mt-15px" : "xl:mb-0 xl:-mt-85px"
-          } `}
+          } ${project ? "max-w-685px" : ""} `}
         />
         {heroText && (
           <div
@@ -56,12 +80,8 @@ const Hero = ({ home, heroFields, title }) => {
       </div>
 
       <GatsbyImage
-        fluid={
-          heroFields.heroImage !== null
-            ? heroFields.heroImage.localFile.childImageSharp.fluid
-            : heroImage.childImageSharp.fluid
-        }
-        className="heroImage"
+        fluid={bannerImage}
+        className={`heroImage ${project ? "opacity-40" : ""}`}
       />
       <HeroWave className="absolute bottom-0" />
     </section>
@@ -72,6 +92,7 @@ Hero.propTypes = {
   home: PropTypes.bool.isRequired,
   heroFields: PropTypes.object,
   title: PropTypes.string,
+  project: PropTypes.bool,
 }
 
 export default Hero

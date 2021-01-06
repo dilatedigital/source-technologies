@@ -31,6 +31,12 @@ const query = `
       }
     }
   }
+  allWpProject {
+    nodes {
+      id
+      uri
+    }
+  }
 }
 `
 
@@ -87,6 +93,18 @@ exports.createPages = async ({ actions, graphql }) => {
         previousPage: previousId,
         uri: post.node.uri,
         cat: post.node.categories.nodes[0].name,
+      },
+    })
+  })
+
+  data.allWpProject.nodes.forEach(proj => {
+    //console.log(post.node.categories.nodes)
+
+    actions.createPage({
+      path: proj.uri,
+      component: path.resolve("./src/templates/SingleProject.js"),
+      context: {
+        id: proj.id,
       },
     })
   })

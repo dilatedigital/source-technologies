@@ -41,7 +41,6 @@ const Hero = ({ home, heroFields, title, project }) => {
     bannerImage = heroImage.childImageSharp.fluid
   } else if (typeof heroFields.heroImage == "undefined") {
     bannerImage = heroFields.node.localFile.childImageSharp.fluid
-    console.log(typeof heroFields.heroImage)
   } else {
     bannerImage = heroFields.heroImage.localFile.childImageSharp.fluid
   }

@@ -105,6 +105,9 @@
   @apply flex font-pop max-w-btn mx-auto font-medium h-btn items-center text-center justify-center rounded-full uppercase text-white bg-primary transition cursor-pointer hover:bg-primary-lighter focus:outline-none focus:ring-2 focus:ring-primary;
   letter-spacing: 3.2px;
 }
+.st-btn.st-btn-left {
+  @apply max-w-190px xl:mx-0;
+}
 .st-divisions svg {
   @apply mx-auto text-source-grey fill-current transition;
 }
@@ -161,7 +164,7 @@
   @apply w-full max-w-slider-img-default;
 }
 .custom-slider .slick-slide.slick-current > div {
-  @apply max-w-slider-img-active;
+  @apply max-w-slider-img-active mx-auto;
 }
 .custom-slider .slick-current .slider-image-container {
   @apply w-full h-slider-img-mobile xl:w-slider-img-active xl:h-slider-img-active;
@@ -174,7 +177,7 @@
   @apply text-slider-p;
 }
 .custom-slider .slick-slide {
-  @apply mt-0 xl:mt-110px;
+  @apply mt-0 overflow-hidden xl:mt-110px;
 }
 .slider-btn {
   @apply rounded-full flex items-center justify-center border-ct-black border-opacity-30 border focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 left-0;
@@ -208,7 +211,9 @@
 .product-img:after {
   @apply rounded-30px;
 }
-.sb-content p {
+.sb-content p,
+.about-history-section p,
+.after-team p {
   @apply text-single-blog-p;
 }
 .sb-content p:not(:last-child) {
@@ -234,6 +239,9 @@
 }
 .st-spinner svg circle {
   @apply opacity-25 stroke-current;
+}
+.members-container > div:not(:last-child) {
+  @apply mb-12 md:mb-0;
 }
 @media (min-width: 1280px) {
   .custom-slider .slick-active.slick-slide {

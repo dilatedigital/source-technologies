@@ -10,7 +10,7 @@ import AboutTeamSection from "../components/About/AboutTeamSection"
 import AfterTeamSection from "../components/About/AfterTeamSection"
 
 const About = ({ data: { wpPage } }) => {
-  console.log(wpPage)
+  //console.log(wpPage)
   const years = chunk(wpPage.aboutPageFields.years, 2)
   //console.log(years)
   return (

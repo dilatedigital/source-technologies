@@ -52,6 +52,7 @@ const Footer = () => {
             }
             label
             id
+            url
           }
         }
       }
@@ -103,6 +104,7 @@ const Footer = () => {
           <FooterCol
             title={data.divisions.name}
             menuItems={data.divisions.menuItems}
+            innerLinks={true}
           />
           <FooterCol
             title={data.company.name}

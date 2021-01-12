@@ -13,16 +13,19 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
   console.log(toggleMenu)
   return (
     <li key={menuItem.key} className="items-center relative menu-item mb-30px">
-      <UniversalLink
-        className="font-pop text-ct-black flex justify-between text-lg"
-        to={
-          menuItem.connectedNode
-            ? menuItem.connectedNode.node.uri
-            : menuItem.url
-        }
-        onClick={toggleMenu}
-      >
-        {menuItem.title}
+      <div className="flex justify-between">
+        <UniversalLink
+          className="font-pop text-ct-black text-lg"
+          to={
+            menuItem.connectedNode
+              ? menuItem.connectedNode.node.uri
+              : menuItem.url
+          }
+          onClick={toggleMenu}
+          onKeyDown={toggleMenu}
+        >
+          {menuItem.title}
+        </UniversalLink>
         {menuItem.children.length > 0 && (
           <button
             className="ml-4 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -35,7 +38,7 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
             />
           </button>
         )}
-      </UniversalLink>
+      </div>
 
       {menuItem.children.length > 0 && (
         <ul
@@ -46,13 +49,14 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
           {menuItem.children.map(subItem => {
             return (
               <li key={subItem.key}>
-                <AnchorLink
-                  stripHash={true}
+                <UniversalLink
                   to={subItem.url}
                   className="font-pop text-ct-black text-mobile-submenu"
+                  onKeyDown={toggleMenu}
+                  onClick={toggleMenu}
                 >
                   {subItem.title}
-                </AnchorLink>
+                </UniversalLink>
               </li>
             )
           })}

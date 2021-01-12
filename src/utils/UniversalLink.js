@@ -10,6 +10,7 @@ const UniversalLink = ({
   activeClassName,
   partiallyActive,
   uri,
+  onKeyDown,
   ...other
 }) => {
   // Tailor the following test to your environment.
@@ -23,6 +24,7 @@ const UniversalLink = ({
         to={to}
         activeClassName={activeClassName}
         partiallyActive={partiallyActive}
+        onKeyDown={onKeyDown}
         uri={uri}
         {...other}
       >

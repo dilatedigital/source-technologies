@@ -8,7 +8,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 const MobileMenu = ({ menu, phone }) => {
   const menuItems = flatListToHierarchical(menu.menuItems.nodes)
   return (
-    <ul className="lg:hidden">
+    <ul className="hidden">
       {menuItems.map(menuItem => {
         return (
           <li

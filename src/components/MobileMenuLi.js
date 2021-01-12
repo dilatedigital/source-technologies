@@ -10,7 +10,7 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
     e.preventDefault()
     setExpanded(!expanded)
   }
-  console.log(toggleMenu)
+
   return (
     <li key={menuItem.key} className="items-center relative menu-item mb-30px">
       <div className="flex justify-between">
@@ -42,7 +42,7 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
 
       {menuItem.children.length > 0 && (
         <ul
-          className={`submenu w-250px bg-white transition-all px-4 border-l border-gray-200 ${
+          className={`submenu w-250px bg-transparent transition-all px-4 border-l border-gray-200 ${
             expanded ? "mt-8 max-h-full" : "max-h-0 overflow-hidden"
           }`}
         >

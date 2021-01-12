@@ -13,7 +13,7 @@ const MobileMenu = ({ menu, phone }) => {
 
   return (
     <div
-      className={`h-full top-0 fixed bg-white z-20 w-full xl:hidden transform p-4 transition ${
+      className={`h-full top-0 fixed bg-white z-20 w-full xl:hidden transform p-4 transition overflow-scroll ${
         isMenuOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >

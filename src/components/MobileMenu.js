@@ -28,7 +28,7 @@ const MobileMenu = ({ menu, phone }) => {
         })}
         <a
           href={`tel:${phone}`}
-          className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition max-w-190px"
+          className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition max-w-190px focus:scale-95 transform"
         >
           Contact Us
         </a>

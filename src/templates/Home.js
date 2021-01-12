@@ -104,7 +104,7 @@ export const query = graphql`
         slug
       }
     }
-    allWpProject {
+    allWpProject(limit: 4) {
       nodes {
         featuredImage {
           node {

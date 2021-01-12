@@ -5,4 +5,10 @@
  */
 
 // You can delete this file if you're not using it
+import React from "react"
+import MenuContextWrapper from "./src/context/MenuContext"
 import "./src/styles/global.css"
+
+export const wrapRootElement = ({ element }) => {
+  return <MenuContextWrapper>{element}</MenuContextWrapper>
+}

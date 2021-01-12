@@ -22,7 +22,7 @@ const MobileMenu = ({ menu, phone }) => {
           <Close />
         </button>
       </div>
-      <ul className="mt-70px max-w-290px ml-14">
+      <ul className="mt-70px max-w-290px ml-14 relative z-10">
         {menuItems.map(menuItem => {
           return <MobileMenuLi menuItem={menuItem} toggleMenu={toggleMenu} />
         })}

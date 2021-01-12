@@ -10,6 +10,7 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
     e.preventDefault()
     setExpanded(!expanded)
   }
+  console.log(toggleMenu)
   return (
     <li key={menuItem.key} className="items-center relative menu-item mb-30px">
       <UniversalLink

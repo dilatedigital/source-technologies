@@ -46,9 +46,9 @@ const Header = () => {
           <div>
             <button
               onClick={toggleMenu}
-              className="focus:outline-none focus:ring-2 focus:ring-primary"
+              className="focus:outline-none focus:ring-2 focus:ring-primary xl:hidden"
             >
-              <Burger className="fill-current text-ct-black xl:hidden" />
+              <Burger className="fill-current text-ct-black" />
             </button>
             <Menu
               menu={wpMenu}

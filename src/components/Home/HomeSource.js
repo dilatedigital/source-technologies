@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 
 const HomeSource = ({ title, content }) => {
   return (
-    <section className="bg-gradient-to-b source-tech-section from-light-grey to-white relative py-28 xl:pt-270px xl:pb-210px">
+    <section
+      className="bg-gradient-to-b source-tech-section from-light-grey to-white relative py-28 xl:pt-270px xl:pb-210px"
+      data-sal="slide-right"
+      data-sal-easing="ease"
+      data-sal-delay="5"
+    >
       <HeroWave className="absolute top-0 z-20 transform rotate-180" />
-      <div
-        className="text-center container-sm px-4"
-        data-sal="slide-up"
-        data-sal-easing="ease"
-        data-sal-delay="5"
-      >
+      <div className="text-center container-sm px-4">
         <h2 className="green-line green-line-center st-h2 st-h2-mb-15">
           {title}
         </h2>

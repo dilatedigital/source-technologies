@@ -40,9 +40,6 @@ const EachDivision = ({ nodes }) => {
                     <div
                       key={image.id}
                       className="max-w-385px mt-12 mx-auto lg:mx-0 lg:mt-0"
-                      data-sal="slide-right"
-                      data-sal-easing="ease"
-                      data-sal-delay="5"
                     >
                       <BackgroundImage
                         fluid={image.image.localFile.childImageSharp.fluid}

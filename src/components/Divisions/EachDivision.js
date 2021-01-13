@@ -8,7 +8,14 @@ const EachDivision = ({ nodes }) => {
     <section className="xl:pt-50px st-division">
       {nodes.nodes.map(node => {
         return (
-          <div key={node.id} id={node.slug} className="each-division">
+          <div
+            key={node.id}
+            id={node.slug}
+            className="each-division"
+            data-sal="slide-up"
+            data-sal-easing="ease"
+            data-sal-delay="5"
+          >
             <div
               dangerouslySetInnerHTML={{ __html: node.divisionFields.iconSvg }}
               className={`${node.divisionFields.color}`}
@@ -33,6 +40,9 @@ const EachDivision = ({ nodes }) => {
                     <div
                       key={image.id}
                       className="max-w-385px mt-12 mx-auto lg:mx-0 lg:mt-0"
+                      data-sal="slide-right"
+                      data-sal-easing="ease"
+                      data-sal-delay="5"
                     >
                       <BackgroundImage
                         fluid={image.image.localFile.childImageSharp.fluid}

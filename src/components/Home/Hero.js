@@ -55,6 +55,9 @@ const Hero = ({ home, heroFields, title, project }) => {
         className={`relative z-10 px-4 ${
           home && !project ? "xl:h-hero-content" : "xl:h-auto"
         } ${!home && !project ? "container-inner" : "container-lg"}`}
+        data-sal="slide-up"
+        data-sal-easing="ease"
+        data-sal-delay="5"
       >
         {heroFields?.suptitle && (
           <h4 className="font-quest text-md relative xl:-top-50px green-line">

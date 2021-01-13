@@ -11,7 +11,12 @@ const HomeAbout = ({
   showArrow,
 }) => {
   return (
-    <section className="container-md px-4 py-14 xl:py-40">
+    <section
+      className="container-md px-4 py-14 xl:py-40"
+      data-sal="slide-up"
+      data-sal-easing="ease"
+      data-sal-delay="5"
+    >
       <div className="text-center max-w-750px mx-auto">
         <h2 className="green-line green-line-center st-h2">{aboutUsTitle}</h2>
         <div

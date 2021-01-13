@@ -11,7 +11,7 @@ const Menu = ({ menu, phone }) => {
   //console.log(menuItems)
 
   return (
-    <ul className="hidden xl:flex items-center justify-center">
+    <ul className="hidden xl:flex items-center justify-center menu">
       {menuItems.map(menuItem => {
         return (
           <li

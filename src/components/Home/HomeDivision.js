@@ -16,7 +16,7 @@ export const firstWordBr = string => {
 
 const HomeDivision = ({ nodes: { nodes } }) => {
   //console.log(nodes)
-
+  let delay = 100
   return (
     <section className="container-md px-4 mx-auto st-divisions py-14 xl:py-0">
       <div
@@ -24,7 +24,7 @@ const HomeDivision = ({ nodes: { nodes } }) => {
           nodes.length > 3 ? "max-w-1400px" : "max-w-815px"
         } mx-auto divisions-container md:flex md:justify-between`}
       >
-        {nodes.map(division => {
+        {nodes.map((division, i) => {
           return (
             <AnchorLink
               key={division.id}
@@ -36,6 +36,9 @@ const HomeDivision = ({ nodes: { nodes } }) => {
                   __html: division.divisionFields.iconSvg,
                 }}
                 className={division.divisionFields.color}
+                data-sal="slide-up"
+                data-sal-easing="ease"
+                data-sal-delay={delay + i}
               />
               <h3 className="font-semibold text-center text-larger mt-4 md:mt-8">
                 {firstWordBr(division.title)}

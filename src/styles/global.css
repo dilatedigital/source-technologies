@@ -246,7 +246,7 @@
 .members-container > div:not(:last-child) {
   @apply mb-12 md:mb-0;
 }
-@media (min-width: 1280px) {
+@media (min-width: 1400px) {
   .custom-slider .slick-active.slick-slide {
     width: 355px !important;
     @apply transition;

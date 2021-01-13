@@ -7,7 +7,7 @@ import { MenuContext } from "../context/MenuContext"
 import MobileMenu from "./MobileMenu"
 
 const Header = () => {
-  const { isMenuOpen, toggleMenu } = useContext(MenuContext)
+  const { toggleMenu } = useContext(MenuContext)
 
   const { wpMenu, wp } = useStaticQuery(graphql`
     {
@@ -41,7 +41,7 @@ const Header = () => {
       <div className="container-lg">
         <div className="flex p-4 items-center justify-between">
           <Link to="/" className="">
-            <Logo className="w-60 md:w-96 xl:w-screen st-logo" />
+            <Logo className="w-60 md:w-96 lg:w-385px 2xl:w-screen st-logo" />
           </Link>
           <div>
             <button

@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { FiChevronDown } from "react-icons/fi"
 import UniversalLink from "../utils/UniversalLink"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const MobileMenuLi = ({ menuItem, toggleMenu }) => {
   const [expanded, setExpanded] = useState(false)

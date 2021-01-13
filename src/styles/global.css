@@ -247,6 +247,9 @@
 .members-container > div:not(:last-child) {
   @apply mb-12 md:mb-0;
 }
+footer a:hover {
+  @apply text-primary;
+}
 @media (min-width: 1400px) {
   .custom-slider .slick-active.slick-slide {
     width: 355px !important;

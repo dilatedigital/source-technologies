@@ -12,7 +12,7 @@ const FooterCol = ({ title, menuItems, generalSiteFields, innerLinks }) => {
   //console.log(menuItems)
 
   return (
-    <div className="mt-8 xl:mt-0">
+    <div className="mt-8 lg:mt-0">
       <h5 className="font-medium mb-6">{title}</h5>
       <ul>
         {menuItemsLen &&

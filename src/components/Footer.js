@@ -77,14 +77,14 @@ const Footer = () => {
 
   return (
     <footer className="mt-auto px-4 relative">
-      <div className="border-t border-ct-black container-md border-opacity-10 py-12 xl:pt-120px xl:pb-12 relative z-10">
-        <div className="footer-upper flex flex-col justify-center items-center text-center xl:flex-row xl:justify-between xl:items-start xl:text-left">
+      <div className="border-t border-ct-black container-md border-opacity-10 py-12 lg:pt-120px lg:pb-12 relative z-10">
+        <div className="footer-upper flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between lg:items-start lg:text-left">
           <div className="st-ft-logo-container w-full">
-            <Link to="/" className="block mb-4 xl:mb-35px st-ft-logo">
+            <Link to="/" className="block mb-4 lg:mb-35px st-ft-logo">
               <Logo />
             </Link>
 
-            <div className="flex justify-center flex-col items-center xl:flex-row xl:justify-start">
+            <div className="flex justify-center flex-col items-center lg:flex-row lg:justify-start">
               <GatsbyImage
                 fluid={
                   siteFooterFields.australianOwnedImg.localFile.childImageSharp
@@ -97,7 +97,7 @@ const Footer = () => {
                 dangerouslySetInnerHTML={{
                   __html: siteFooterFields.australianOwnedText,
                 }}
-                className="font-pop font-medium xl:ml-4"
+                className="font-pop font-medium lg:ml-4"
               />
             </div>
           </div>
@@ -115,14 +115,14 @@ const Footer = () => {
             generalSiteFields={generalSiteFields}
           />
         </div>
-        <div className="footer-lower mt-10 xl:flex xl:justify-between xl:items-center xl:mt-70px">
+        <div className="footer-lower mt-10 lg:flex lg:justify-between lg:items-center lg:mt-70px">
           <div className="text-center text-smaller">
             &copy;
             {` ${new Date().getFullYear()} ${
               generalSiteFields.companyName
             }. All Rights Reserved.`}
           </div>
-          <div className="mt-2 text-lg flex justify-center xl:mt-0 xl:mr-110px">
+          <div className="mt-2 text-lg flex justify-center lg:mt-0 lg:mr-110px">
             {generalSiteFields.facebook && (
               <a
                 href={generalSiteFields.facebook}

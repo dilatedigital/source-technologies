@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 const HomeSource = ({ title, content }) => {
   return (
     <section
-      className="bg-gradient-to-b source-tech-section from-light-grey to-white relative py-28 xl:pt-270px xl:pb-210px"
+      className="bg-gradient-to-b source-tech-section from-light-grey to-white relative py-28 lg:pt-270px lg:pb-210px"
       data-sal="slide-up"
       data-sal-easing="ease"
       data-sal-delay="5"

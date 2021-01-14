@@ -48,7 +48,7 @@ const Hero = ({ home, heroFields, title, project }) => {
   return (
     <section
       className={`hero-section relative h-80 ${
-        home ? "xl:h-hero" : "xl:h-inner-hero"
+        home ? "md:h-inner-hero xl:h-hero" : "md:h-inner-hero"
       } flex items-center`}
     >
       <div

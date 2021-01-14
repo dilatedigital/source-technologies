@@ -26,8 +26,7 @@
   max-width: 552px;
 }
 .st-ft-logo-container {
-  max-width: 450px;
-  @apply w-full;
+  @apply w-full max-w-450px lg:max-w-385px xl:max-w-450px;
 }
 .st-ft-logo {
   max-width: 420px;
@@ -171,7 +170,7 @@
   @apply max-w-slider-img-active mx-auto;
 }
 .custom-slider .slick-current .slider-image-container {
-  @apply w-full h-slider-img-mobile xl:w-slider-img-active xl:h-slider-img-active;
+  @apply w-full h-slider-img-mobile lg:w-slider-img-active lg:h-slider-img-active;
 }
 .custom-slider .slider-image-container:before,
 .custom-slider .slider-image-container:after {

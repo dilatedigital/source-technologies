@@ -71,7 +71,7 @@
   @apply object-cover;
 }
 .menu-open {
-  @apply max-h-screen overflow-hidden;
+  @apply overflow-y-hidden;
 }
 .green-line:before {
   content: "";

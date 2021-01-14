@@ -10,18 +10,20 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import Footer from "./Footer"
 import { MenuContext } from "../context/MenuContext"
+import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   const { isMenuOpen } = useContext(MenuContext)
   return (
-    <div
-      className={`flex flex-col min-h-screen ${isMenuOpen ? "menu-open" : ""}`}
-    >
-      <Header />
-      <main>{children}</main>
+    <>
+      <Helmet bodyAttributes={{ class: isMenuOpen ? "menu-open" : "" }} />
+      <div className={`flex flex-col min-h-screen`}>
+        <Header />
+        <main>{children}</main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 

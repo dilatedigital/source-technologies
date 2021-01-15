@@ -31,10 +31,13 @@ const Menu = ({ menu, phone }) => {
 
             {menuItem.children.length > 0 && <FiChevronDown className="ml-2" />}
             {menuItem.children.length > 0 && (
-              <ul className="hidden submenu absolute w-250px bg-white shadow-2xl transition-all p-4 top-20px">
+              <ul className="hidden submenu absolute w-250px bg-white shadow-2xl transition-all py-4 top-25px rounded-lg">
                 {menuItem.children.map(subItem => {
                   return (
-                    <li key={subItem.key}>
+                    <li
+                      key={subItem.key}
+                      className="py-2 px-4 w-full hover:bg-light-grey"
+                    >
                       <AnchorLink
                         stripHash={true}
                         to={subItem.url}

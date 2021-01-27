@@ -1,16 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import GatsbyImage from "gatsby-image"
+//import GatsbyImage from "gatsby-image"
 import HeroWave from "../../assets/herowave.svg"
 import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const query = graphql`
   query {
     heroImage: file(relativePath: { eq: "inner_banner.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
       }
     }
   }
@@ -31,18 +30,16 @@ const Hero = ({ home, heroFields, title, project }) => {
   //hero title
   const bannerTitle = title ? title : heroFields.title
 
-  //console.log(heroFields.heroImage)
-
   let bannerImage
 
   //console.log(heroFields)
 
   if (!heroFields.heroImage && !project) {
-    bannerImage = heroImage.childImageSharp.fluid
+    bannerImage = getImage(heroImage)
   } else if (typeof heroFields.heroImage == "undefined") {
-    bannerImage = heroFields.node.localFile.childImageSharp.fluid
+    bannerImage = getImage(heroFields.node.localFile)
   } else {
-    bannerImage = heroFields.heroImage.localFile.childImageSharp.fluid
+    bannerImage = getImage(heroFields.heroImage.localFile)
   }
 
   return (
@@ -81,10 +78,14 @@ const Hero = ({ home, heroFields, title, project }) => {
         )}
       </div>
 
-      <GatsbyImage
-        fluid={bannerImage}
-        className={`heroImage ${project ? "opacity-40" : ""}`}
-      />
+      <div className="heroImage">
+        <GatsbyImage
+          image={bannerImage}
+          alt="Source Technologies Au"
+          className={`${project ? "opacity-40" : ""}`}
+        />
+      </div>
+
       <HeroWave className="absolute bottom-0" />
     </section>
   )

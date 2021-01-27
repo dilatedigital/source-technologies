@@ -63,11 +63,10 @@
   @apply hidden xl:block;
 }
 .heroImage {
-  @apply w-full h-full mt-0 top-0;
-  position: absolute !important;
+  @apply mt-0 top-0 w-full h-full absolute;
 }
-.heroImage .gatsby-image {
-  @apply object-cover;
+.heroImage .gatsby-image-wrapper {
+  @apply object-cover w-full h-full;
 }
 .menu-open {
   @apply overflow-hidden;

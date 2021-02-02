@@ -78,7 +78,7 @@ const Hero = ({ home, heroFields, title, project }) => {
         )}
       </div>
 
-      <div className="heroImage">
+      <div className="heroImage max-w-600px lg:max-w-full">
         <GatsbyImage
           image={bannerImage}
           alt="Source Technologies Au"

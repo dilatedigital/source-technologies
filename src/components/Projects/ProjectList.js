@@ -83,6 +83,7 @@ const ProjectList = ({ searchTerm }) => {
         <>
           <button
             className="st-btn w-full mt-8 xl:mt-0"
+            aria-label="Load more projects"
             onClick={fetchMoreProjects}
           >
             Load more

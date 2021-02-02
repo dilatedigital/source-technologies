@@ -18,7 +18,7 @@ const MobileMenu = ({ menu, phone }) => {
       }`}
     >
       <div className="flex justify-end">
-        <button onClick={toggleMenu}>
+        <button onClick={toggleMenu} aria-label="Close">
           <Close />
         </button>
       </div>

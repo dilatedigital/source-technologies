@@ -29,6 +29,7 @@ const MobileMenuLi = ({ menuItem, toggleMenu }) => {
           <button
             className="ml-4 focus:outline-none focus:ring-2 focus:ring-primary"
             onClick={subClicked}
+            aria-label="Toggle Submenu"
           >
             <FiChevronDown
               className={`text-2xl transition-all ${

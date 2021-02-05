@@ -9,7 +9,11 @@ const query = graphql`
   query {
     heroImage: file(relativePath: { eq: "inner_banner.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          placeholder: TRACED_SVG
+          quality: 90
+        )
       }
     }
   }

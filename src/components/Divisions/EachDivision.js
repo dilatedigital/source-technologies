@@ -3,10 +3,15 @@ import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image"
 
 const EachDivision = ({ nodes }) => {
-  //console.log(nodes)
+  //console.log(nodes.nodes)
+
+  const sorted = nodes.nodes
+    .filter(item => item.id !== "cG9zdDozODA=")
+    .concat(nodes.nodes.filter(item => item.id === "cG9zdDozODA="))
+
   return (
     <section className="xl:pt-50px st-division">
-      {nodes.nodes.map(node => {
+      {sorted.map(node => {
         return (
           <div key={node.id} id={node.slug} className="each-division">
             <div

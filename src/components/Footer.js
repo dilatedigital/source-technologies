@@ -1,10 +1,33 @@
-import React from "react"
+import React, { useContext } from "react"
 import Logo from "../assets/sourcetechnologies-logo.svg"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import GatsbyImage from "gatsby-image"
 import FooterCol from "./FooterCol"
+import ModalForm from "../components/Forms/ModalForm"
+import { MenuContext } from "../context/MenuContext"
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa"
 import FooterIcon from "../assets/footerIcon.svg"
+import Modal from "react-modal"
+
+const modalStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    zIndex: "50",
+  },
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    borderRadius: "30px",
+    maxWidth: "815px",
+    width: "100%",
+    minHeight: "500px",
+    padding: "60px 0",
+  },
+}
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -74,6 +97,8 @@ const Footer = () => {
   `)
   const siteFooterFields = data.wp.themeFooterSettings.siteFooterFields
   const generalSiteFields = data.wp.siteGeneralSettings.siteSettingsFields
+
+  const { isModalOpen, closeModal } = useContext(MenuContext)
 
   return (
     <footer className="mt-auto px-4 relative">
@@ -156,6 +181,16 @@ const Footer = () => {
         </div>
       </div>
       <FooterIcon className="absolute right-0 bottom-0" />
+      <Modal
+        isOpen={isModalOpen}
+        style={modalStyles}
+        contentLabel="Contact Us"
+        onRequestClose={closeModal}
+        shouldCloseOnEsc={true}
+        appElement={document.getElementById("___gatsby")}
+      >
+        <ModalForm />
+      </Modal>
     </footer>
   )
 }

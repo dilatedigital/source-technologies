@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { flatListToHierarchical } from "../utils/flastListToHeirarchical"
 import { FiChevronDown } from "react-icons/fi"
 import UniversalLink from "../utils/UniversalLink"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { MenuContext } from "../context/MenuContext"
 
-const Menu = ({ menu, phone }) => {
+const Menu = ({ menu }) => {
   const menuItems = flatListToHierarchical(menu.menuItems.nodes)
+
+  const { openModal } = useContext(MenuContext)
 
   //console.log(menuItems)
 
@@ -53,12 +56,13 @@ const Menu = ({ menu, phone }) => {
           </li>
         )
       })}
-      <a
-        href={`tel:${phone}`}
-        className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition"
+      <button
+        aria-label="Contact Us"
+        onClick={openModal}
+        className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition focus:outline-none focus:ring-2 focus:ring-primary"
       >
         Contact Us
-      </a>
+      </button>
     </ul>
   )
 }

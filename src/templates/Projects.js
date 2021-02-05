@@ -68,7 +68,11 @@ export const query = graphql`
         heroImage {
           localFile {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: TRACED_SVG
+                quality: 90
+              )
             }
           }
         }

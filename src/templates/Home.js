@@ -71,7 +71,11 @@ export const query = graphql`
         heroImage {
           localFile {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                quality: 90
+              )
             }
           }
         }
@@ -91,7 +95,10 @@ export const query = graphql`
         sourceTechTitle
       }
     }
-    allWpDivision(sort: { order: DESC, fields: date }) {
+    allWpDivision(
+      sort: { order: DESC, fields: date }
+      filter: { divisionFields: { showInHomePage: { eq: true } } }
+    ) {
       nodes {
         title
         divisionFields {

@@ -125,6 +125,9 @@
 .each-division .orange {
   @apply text-st-orange fill-current;
 }
+.each-division .green {
+  @apply text-primary fill-current;
+}
 .each-division .st-btn.blue {
   @apply bg-st-blue;
 }
@@ -248,7 +251,60 @@
 footer a:hover {
   @apply text-primary;
 }
-@media (min-width: 1400px) {
+
+.st-modal {
+  max-width: 727px;
+  @apply mx-auto overflow-auto px-15px;
+}
+.st-modal input[type="text"],
+.st-modal input[type="email"],
+.st-modal select,
+.st-modal textarea {
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  @apply w-full focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.st-modal select {
+  @apply appearance-none;
+}
+
+.st-modal .st-error-msg {
+  @apply text-red-400;
+}
+
+.st-modal .st-btn {
+  max-width: 245px;
+  border-radius: 28px;
+  @apply w-full mx-0 mt-4 lg:mt-8;
+}
+
+.st-modal .green-line:before {
+  top: -10px;
+}
+
+.st-modal .st-h2 {
+  @apply mb-8;
+}
+
+.st-modal .st-form-control > div {
+  @apply mb-4 lg:mb-0;
+}
+
+.st-modal .st-form-control {
+  @apply lg:flex lg:justify-between lg:mb-4;
+}
+
+@media screen and (min-width: 1024px) {
+  .st-modal .st-form-control > div {
+    width: 330px;
+  }
+  .st-modal textarea {
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1400px) {
   .custom-slider .slick-active.slick-slide {
     width: 355px !important;
     @apply transition;

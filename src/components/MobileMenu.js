@@ -9,7 +9,7 @@ import MobileMenuLi from "./MobileMenuLi"
 const MobileMenu = ({ menu, phone }) => {
   const menuItems = flatListToHierarchical(menu.menuItems.nodes)
 
-  const { isMenuOpen, toggleMenu } = useContext(MenuContext)
+  const { isMenuOpen, toggleMenu, openModal } = useContext(MenuContext)
 
   return (
     <div
@@ -26,12 +26,13 @@ const MobileMenu = ({ menu, phone }) => {
         {menuItems.map(menuItem => {
           return <MobileMenuLi menuItem={menuItem} toggleMenu={toggleMenu} />
         })}
-        <a
-          href={`tel:${phone}`}
-          className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition max-w-190px focus:scale-95 transform"
+        <button
+          aria-label="Contact Us"
+          onClick={openModal}
+          className="mr-0 font-pop bg-primary text-white uppercase tracking-two flex items-center justify-center py-4 px-8 rounded-full font-semibold cursor-pointer hover:bg-primary-lighter transition focus:outline-none focus:ring-2 focus:ring-primary"
         >
           Contact Us
-        </a>
+        </button>
       </ul>
       <FooterIcon className="absolute right-0 bottom-0" />
     </div>

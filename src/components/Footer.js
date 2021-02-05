@@ -187,7 +187,7 @@ const Footer = () => {
         contentLabel="Contact Us"
         onRequestClose={closeModal}
         shouldCloseOnEsc={true}
-        appElement={document.getElementById("___gatsby")}
+        ariaHideApp={false}
       >
         <ModalForm />
       </Modal>

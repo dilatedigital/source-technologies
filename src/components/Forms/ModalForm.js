@@ -10,7 +10,9 @@ import Loading from "../../assets/loading.svg"
 const ModalForm = () => {
   const formLink = process.env.GATSBY_HOMEFORM
 
-  const { register, handleSubmit, errors, formState } = useForm()
+  const { register, handleSubmit, errors, formState } = useForm({
+    mode: "onBlur",
+  })
 
   const [isFormSubmitting, setFormSubmit] = useState(false)
 

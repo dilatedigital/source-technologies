@@ -3,6 +3,7 @@ import { MenuContext } from "../../context/MenuContext"
 import { useForm } from "react-hook-form"
 import axios from "axios"
 import { CgArrowRight } from "react-icons/cg"
+import { FiChevronDown } from "react-icons/fi"
 import Close from "../../assets/close.svg"
 import Loading from "../../assets/loading.svg"
 
@@ -191,7 +192,7 @@ const ModalForm = () => {
             </div>
             <div>
               <label htmlFor="enquiryType">Enquiry Type</label>
-              <div>
+              <div className="relative">
                 <select
                   type="enquiryType"
                   id="enquiryType"
@@ -210,6 +211,7 @@ const ModalForm = () => {
                   <option value="Accounts">Accounts</option>
                   <option value="Other">Other</option>
                 </select>
+                <FiChevronDown className="absolute" />
                 {errors.enquiryType && errors.enquiryType.message && (
                   <p className="st-error-msg">{errors.enquiryType.message}</p>
                 )}

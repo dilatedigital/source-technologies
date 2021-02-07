@@ -300,6 +300,12 @@ footer a:hover {
   margin-top: 100px;
 }
 
+.st-phone-enquiry .relative svg {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+}
+
 @media screen and (min-width: 768px) {
   .ReactModal__Content--after-open {
     margin-top: 0;

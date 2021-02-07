@@ -70,7 +70,7 @@ const AboutHistorySection = ({
                       </div>
                       <div
                         dangerouslySetInnerHTML={{ __html: yr.yearContent }}
-                        className="max-w-535px"
+                        className="max-w-535px w-full"
                       />
                     </div>
                   )

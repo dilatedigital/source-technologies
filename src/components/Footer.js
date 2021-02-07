@@ -13,6 +13,7 @@ const modalStyles = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.7)",
     zIndex: "50",
+    overflow: "scroll",
   },
   content: {
     top: "50%",

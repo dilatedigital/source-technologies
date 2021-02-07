@@ -254,7 +254,7 @@ footer a:hover {
 
 .st-modal {
   max-width: 727px;
-  @apply mx-auto overflow-auto px-15px;
+  @apply mx-auto px-15px;
 }
 .st-modal input[type="text"],
 .st-modal input[type="email"],
@@ -294,6 +294,16 @@ footer a:hover {
 
 .st-modal .st-form-control {
   @apply lg:flex lg:justify-between lg:mb-4;
+}
+
+.ReactModal__Content--after-open {
+  margin-top: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .ReactModal__Content--after-open {
+    margin-top: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {

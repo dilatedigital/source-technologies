@@ -100,7 +100,8 @@
   @apply mb-15px;
 }
 .source-tech-section p:not(:last-child),
-.each-division-content p:not(:last-child) {
+.each-division-content p:not(:last-child),
+.each-division-content ul {
   @apply mb-15px xl:mb-35px;
 }
 .st-btn {
@@ -155,6 +156,13 @@
 }
 .st-divisions .divisions-container div:not(:last-child) {
   @apply mt-8 md:mt-0;
+}
+.each-division-content ul {
+  @apply grid grid-cols-1 gap-4;
+}
+.each-division-content ul li {
+  background: #f1f1f1;
+  @apply rounded-2xl leading-5 text-center py-4 px-2 flex items-center justify-center;
 }
 .custom-slider .slider-info {
   @apply hidden;
@@ -310,6 +318,12 @@ footer a:hover {
   .ReactModal__Content--after-open {
     margin-top: 0;
   }
+  .each-division-content ul {
+    @apply grid-cols-3;
+  }
+  .each-division-content ul li {
+    max-width: 260px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -318,6 +332,9 @@ footer a:hover {
   }
   .st-modal textarea {
     height: 100px;
+  }
+  .each-division-content ul {
+    @apply grid-cols-4;
   }
 }
 @media screen and (min-width: 1400px) {

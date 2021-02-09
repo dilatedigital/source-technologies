@@ -28,7 +28,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         /*
          * The full URL of the WordPress site's GraphQL API.
@@ -36,6 +36,7 @@ module.exports = {
          */
         url: process.env.GATSBY_WPGRAPHQL_URL,
         schema: {
+          perPage: 30,
           timeout: 50000,
         },
       },

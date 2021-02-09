@@ -141,8 +141,11 @@
   @apply text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary text-xs md:text-base px-4 md:px-0;
   max-width: 540px;
 }
-.st-division .each-division {
+.st-division .each-division:not(:last-child) {
   @apply mb-150px;
+}
+.st-division .each-division:last-child {
+  @apply mb-55px;
 }
 .st-divisions .blue svg {
   @apply hover:text-st-blue fill-current;
@@ -162,6 +165,10 @@
 .each-division-content ul li {
   background: #f1f1f1;
   @apply rounded-2xl leading-5 text-center py-4 px-2 flex items-center justify-center;
+}
+.sub-distribution {
+  max-width: 658px;
+  @apply w-full p-10;
 }
 .custom-slider .slider-info {
   @apply hidden;
@@ -281,10 +288,15 @@ footer a:hover {
   @apply text-red-400;
 }
 
-.st-modal .st-btn {
+.st-modal .st-btn,
+.sub-distribution .st-btn {
   max-width: 245px;
   border-radius: 28px;
   @apply w-full mx-0 mt-4 lg:mt-8;
+}
+
+.sub-distribution .st-btn {
+  @apply mt-0;
 }
 
 .st-modal .green-line:before {
@@ -335,6 +347,12 @@ footer a:hover {
   .each-division-content ul {
     @apply grid-cols-4;
   }
+  .sub-distribution {
+    @apply flex flex-col justify-center bg-white z-10 absolute;
+    height: 300px;
+    left: 100px;
+    bottom: -130px;
+  }
 }
 @media screen and (min-width: 1400px) {
   .custom-slider .slick-active.slick-slide {
@@ -344,5 +362,9 @@ footer a:hover {
   .custom-slider .slick-slide.slick-current {
     width: 510px !important;
     @apply mx-75px mt-0;
+  }
+  .sub-distribution {
+    height: 420px;
+    bottom: -50px;
   }
 }

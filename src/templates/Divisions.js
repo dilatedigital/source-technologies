@@ -1,5 +1,6 @@
 import { graphql } from "gatsby"
 import React from "react"
+import BottomDivision from "../components/Divisions/BottomDivision"
 import EachDivision from "../components/Divisions/EachDivision"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
@@ -12,7 +13,7 @@ const Divisions = ({
   data: { wpPage },
   data: { allWpDivision },
 }) => {
-  //console.log(allWpDivision)
+  //console.log(wpPage)
   return (
     <Layout>
       <SEO
@@ -32,6 +33,7 @@ const Divisions = ({
       <div className="container-lg px-4 pt-14 pb-4">
         <EachDivision nodes={allWpDivision} />
       </div>
+      <BottomDivision bottomContent={wpPage.divisionPageFields.bottomContent} />
     </Layout>
   )
 }
@@ -58,6 +60,19 @@ export const query = graphql`
                 placeholder: TRACED_SVG
                 quality: 90
               )
+            }
+          }
+        }
+      }
+      divisionPageFields {
+        bottomContent {
+          bottomText
+          bottomImage {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(quality: 100, placeholder: TRACED_SVG)
+              }
             }
           }
         }

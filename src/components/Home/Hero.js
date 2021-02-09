@@ -83,7 +83,7 @@ const Hero = ({ home, heroFields, title, project }) => {
       </div>
 
       <div
-        className={`heroImage lg:max-w-full ${home ? "hidden" : "lg:block"}`}
+        className={`heroImage lg:max-w-full ${home ? "hidden lg:block" : ""}`}
       >
         <GatsbyImage
           image={bannerImage}

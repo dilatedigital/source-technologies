@@ -122,7 +122,11 @@ const Footer = () => {
       <div className="border-t border-ct-black container-md border-opacity-10 py-12 lg:pt-120px lg:pb-12 relative z-10">
         <div className="footer-upper flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between lg:items-start lg:text-left">
           <div className="st-ft-logo-container w-full">
-            <Link to="/" className="block mb-4 lg:mb-35px st-ft-logo">
+            <Link
+              to="/"
+              className="block mb-4 lg:mb-35px st-ft-logo"
+              aria-label="Logo"
+            >
               <Logo />
             </Link>
 
@@ -175,6 +179,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="mr-8"
+                aria-label="Facebook"
               >
                 <FaFacebookF className="hover:text-primary fill-current transition cursor-pointer" />
               </a>
@@ -185,6 +190,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="mr-8"
+                aria-label="Twitter"
               >
                 <FaTwitter className="hover:text-primary fill-current transition cursor-pointer" />
               </a>
@@ -194,6 +200,7 @@ const Footer = () => {
                 href={generalSiteFields.youtube}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="YouTube"
               >
                 <FaYoutube className="hover:text-primary fill-current transition cursor-pointer" />
               </a>

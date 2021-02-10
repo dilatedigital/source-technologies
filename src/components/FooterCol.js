@@ -3,7 +3,13 @@ import PropTypes from "prop-types"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { Link } from "gatsby"
 
-const FooterCol = ({ title, menuItems, generalSiteFields, innerLinks }) => {
+const FooterCol = ({
+  title,
+  menuItems,
+  generalSiteFields,
+  innerLinks,
+  termsConditions,
+}) => {
   let menuItemsLen
   //console.log(generalSiteFields)
   if (menuItems) {
@@ -61,6 +67,22 @@ const FooterCol = ({ title, menuItems, generalSiteFields, innerLinks }) => {
             </a>
           </li>
         )}
+        {termsConditions && (
+          <>
+            <li className="mb-4">
+              <Link to={termsConditions.privacyPolicy.uri}>Privacy Policy</Link>
+            </li>
+            <li>
+              <a
+                href={termsConditions.tradingTermsFile.localFile.publicURL}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Trading Terms
+              </a>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   )
@@ -71,6 +93,7 @@ FooterCol.propTypes = {
   menuItems: PropTypes.object,
   generalSiteFields: PropTypes.object,
   innerLinks: PropTypes.bool,
+  termsConditions: PropTypes.object,
 }
 
 export default FooterCol

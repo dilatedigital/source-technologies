@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { chunk } from "lodash"
+//import { chunk } from "lodash"
 import AboutHistorySection from "../components/About/AboutHistorySection"
 import AboutTopContent from "../components/About/AboutTopContent"
 import AboutTeamSection from "../components/About/AboutTeamSection"
@@ -11,8 +11,9 @@ import AfterTeamSection from "../components/About/AfterTeamSection"
 
 const About = ({ data: { wpPage } }) => {
   //console.log(wpPage)
-  const years = chunk(wpPage.aboutPageFields.years, 2)
-  //console.log(years)
+  //divide years to two per slide
+  //const years = chunk(wpPage.aboutPageFields.years, 2)
+  console.log(wpPage.aboutPageFields.years)
   return (
     <Layout>
       <SEO
@@ -41,7 +42,7 @@ const About = ({ data: { wpPage } }) => {
           }
           historyContent={wpPage.aboutPageFields.historyContent}
           historyTitle={wpPage.aboutPageFields.historyTitle}
-          years={years}
+          years={wpPage.aboutPageFields.years}
           showButton={wpPage.aboutPageFields.showContactButton}
           buttonText={wpPage.aboutPageFields.contactButtonText}
         />
@@ -57,10 +58,21 @@ const About = ({ data: { wpPage } }) => {
               .fluid
           }
         />
-        <AboutTopContent
-          title={wpPage.aboutPageFields.bottomContentTitle}
-          content={wpPage.aboutPageFields.bottomContentText}
-          position="bottom"
+        <AfterTeamSection
+          title={wpPage.aboutPageFields.missionStatementTitle}
+          text={wpPage.aboutPageFields.missionStatementText}
+          image={
+            wpPage.aboutPageFields.missionStatementImage.localFile
+              .childImageSharp.fluid
+          }
+          reverse={true}
+        />
+        <AfterTeamSection
+          title={wpPage.aboutPageFields.valuesTitle}
+          text={wpPage.aboutPageFields.valuesText}
+          image={
+            wpPage.aboutPageFields.valuesImage.localFile.childImageSharp.fluid
+          }
         />
       </div>
     </Layout>
@@ -113,10 +125,32 @@ export const query = graphql`
         }
         afterTeamText
         afterTeamTitle
-        bottomContentText
-        bottomContentTitle
         contactButtonText
         afterTeamImage {
+          localFile {
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        missionStatementText
+        missionStatementTitle
+        contactButtonText
+        missionStatementImage {
+          localFile {
+            childImageSharp {
+              fluid(quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        valuesText
+        valuesTitle
+        contactButtonText
+        valuesImage {
           localFile {
             childImageSharp {
               fluid(quality: 100) {

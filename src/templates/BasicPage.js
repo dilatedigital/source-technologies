@@ -9,12 +9,9 @@ const BasicPage = ({
 }) => {
   return (
     <Layout>
-      <div className="container mx-auto mt-8 h-screen">
+      <div className="container mx-auto mt-12 lg:mt-24 h-screen">
         <h2>{title}</h2>
         <div dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
-      <div id="source" className="h-screen">
-        <h4>Source</h4>
       </div>
     </Layout>
   )

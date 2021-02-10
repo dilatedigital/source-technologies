@@ -100,7 +100,8 @@
 }
 .source-tech-section p:not(:last-child),
 .each-division-content p:not(:last-child),
-.each-division-content ul {
+.each-division-content ul,
+.after-team p:not(:last-child) {
   @apply mb-15px xl:mb-35px;
 }
 .st-btn {
@@ -323,6 +324,32 @@ footer a:hover {
   top: 50%;
   transform: translateY(-50%);
   right: 15px;
+}
+
+.after-team:not(:first-child) {
+  @apply pt-8 xl:pt-120px;
+}
+
+.after-team:last-child {
+  @apply pb-20 xl:pb-220px;
+}
+
+.after-team ul li:after {
+  background-image: url(../../static/check.png);
+  @apply block absolute left-0 bg-cover;
+  content: "";
+  width: 22px;
+  height: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.after-team ul li {
+  @apply relative text-md pl-10 text-left;
+}
+
+.after-team ul li:not(:last-child) {
+  @apply mb-4;
 }
 
 @media screen and (min-width: 768px) {

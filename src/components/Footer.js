@@ -46,6 +46,18 @@ const Footer = () => {
               }
             }
             australianOwnedText
+            termsConditions {
+              privacyPolicy {
+                ... on WpPage {
+                  uri
+                }
+              }
+              tradingTermsFile {
+                localFile {
+                  publicURL
+                }
+              }
+            }
           }
         }
         siteGeneralSettings {
@@ -98,6 +110,10 @@ const Footer = () => {
   `)
   const siteFooterFields = data.wp.themeFooterSettings.siteFooterFields
   const generalSiteFields = data.wp.siteGeneralSettings.siteSettingsFields
+  const termsConditions =
+    data.wp.themeFooterSettings.siteFooterFields.termsConditions
+
+  //console.log(termsConditions)
 
   const { isModalOpen, closeModal } = useContext(MenuContext)
 
@@ -135,6 +151,10 @@ const Footer = () => {
           <FooterCol
             title={data.company.name}
             menuItems={data.company.menuItems}
+          />
+          <FooterCol
+            title="Terms & Conditions"
+            termsConditions={termsConditions}
           />
           <FooterCol
             title="Source Technologies"

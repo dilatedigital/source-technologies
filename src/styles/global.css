@@ -304,6 +304,10 @@ footer a:hover {
   top: -10px;
 }
 
+.pradeep {
+  color: #fff;
+}
+
 .st-modal .st-h2 {
   @apply mb-8;
 }

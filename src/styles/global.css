@@ -430,3 +430,9 @@ footer a:hover {
     bottom: -50px;
   }
 }
+
+@media all and (display-mode: standalone) {
+  header.sticky {
+    position: relative;
+  }
+}

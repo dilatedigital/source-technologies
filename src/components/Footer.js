@@ -9,6 +9,11 @@ import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa"
 import FooterIcon from "../assets/footerIcon.svg"
 import Modal from "react-modal"
 
+const isInStandaloneMode = () =>
+  window.matchMedia("(display-mode: standalone)").matches ||
+  window.navigator.standalone ||
+  document.referrer.includes("android-app://")
+
 const modalStyles = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -118,108 +123,111 @@ const Footer = () => {
   const { isModalOpen, closeModal } = useContext(MenuContext)
 
   return (
-    <footer className="mt-auto px-4 relative">
-      <div className="border-t border-ct-black container-md border-opacity-10 py-12 lg:pt-120px lg:pb-12 relative z-10">
-        <div className="footer-upper flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between lg:items-start lg:text-left">
-          <div className="st-ft-logo-container w-full">
-            <Link
-              to="/"
-              className="block mb-4 lg:mb-35px st-ft-logo"
-              aria-label="Logo"
-            >
-              <Logo />
-            </Link>
+    <>
+      {isInStandaloneMode() && <h2>Installed</h2>}
+      <footer className="mt-auto px-4 relative">
+        <div className="border-t border-ct-black container-md border-opacity-10 py-12 lg:pt-120px lg:pb-12 relative z-10">
+          <div className="footer-upper flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between lg:items-start lg:text-left">
+            <div className="st-ft-logo-container w-full">
+              <Link
+                to="/"
+                className="block mb-4 lg:mb-35px st-ft-logo"
+                aria-label="Logo"
+              >
+                <Logo />
+              </Link>
 
-            <div className="flex justify-center flex-col items-center lg:flex-row lg:justify-start">
-              <GatsbyImage
-                fluid={
-                  siteFooterFields.australianOwnedImg.localFile.childImageSharp
-                    .fluid
-                }
-                className="ao-logo w-full"
-                alt={siteFooterFields.australianOwnedText}
-              />
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: siteFooterFields.australianOwnedText,
-                }}
-                className="font-pop font-medium lg:ml-4"
-              />
+              <div className="flex justify-center flex-col items-center lg:flex-row lg:justify-start">
+                <GatsbyImage
+                  fluid={
+                    siteFooterFields.australianOwnedImg.localFile
+                      .childImageSharp.fluid
+                  }
+                  className="ao-logo w-full"
+                  alt={siteFooterFields.australianOwnedText}
+                />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: siteFooterFields.australianOwnedText,
+                  }}
+                  className="font-pop font-medium lg:ml-4"
+                />
+              </div>
+            </div>
+            <FooterCol
+              title={data.divisions.name}
+              menuItems={data.divisions.menuItems}
+              innerLinks={true}
+            />
+            <FooterCol
+              title={data.company.name}
+              menuItems={data.company.menuItems}
+            />
+            <FooterCol
+              title="Terms & Conditions"
+              termsConditions={termsConditions}
+            />
+            <FooterCol
+              title="Source Technologies"
+              generalSiteFields={generalSiteFields}
+            />
+          </div>
+          <div className="footer-lower mt-10 lg:flex lg:justify-between lg:items-center lg:mt-70px">
+            <div className="text-center text-smaller">
+              &copy;
+              {` ${new Date().getFullYear()} ${
+                generalSiteFields.companyName
+              }. All Rights Reserved.`}
+            </div>
+            <div className="mt-2 text-lg flex justify-center lg:mt-0 lg:mr-110px">
+              {generalSiteFields.facebook && (
+                <a
+                  href={generalSiteFields.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mr-8"
+                  aria-label="Facebook"
+                >
+                  <FaFacebookF className="hover:text-primary fill-current transition cursor-pointer" />
+                </a>
+              )}
+              {generalSiteFields.twitter && (
+                <a
+                  href={generalSiteFields.twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mr-8"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter className="hover:text-primary fill-current transition cursor-pointer" />
+                </a>
+              )}
+              {generalSiteFields.youtube && (
+                <a
+                  href={generalSiteFields.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                >
+                  <FaYoutube className="hover:text-primary fill-current transition cursor-pointer" />
+                </a>
+              )}
             </div>
           </div>
-          <FooterCol
-            title={data.divisions.name}
-            menuItems={data.divisions.menuItems}
-            innerLinks={true}
-          />
-          <FooterCol
-            title={data.company.name}
-            menuItems={data.company.menuItems}
-          />
-          <FooterCol
-            title="Terms & Conditions"
-            termsConditions={termsConditions}
-          />
-          <FooterCol
-            title="Source Technologies"
-            generalSiteFields={generalSiteFields}
-          />
         </div>
-        <div className="footer-lower mt-10 lg:flex lg:justify-between lg:items-center lg:mt-70px">
-          <div className="text-center text-smaller">
-            &copy;
-            {` ${new Date().getFullYear()} ${
-              generalSiteFields.companyName
-            }. All Rights Reserved.`}
-          </div>
-          <div className="mt-2 text-lg flex justify-center lg:mt-0 lg:mr-110px">
-            {generalSiteFields.facebook && (
-              <a
-                href={generalSiteFields.facebook}
-                target="_blank"
-                rel="noreferrer"
-                className="mr-8"
-                aria-label="Facebook"
-              >
-                <FaFacebookF className="hover:text-primary fill-current transition cursor-pointer" />
-              </a>
-            )}
-            {generalSiteFields.twitter && (
-              <a
-                href={generalSiteFields.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="mr-8"
-                aria-label="Twitter"
-              >
-                <FaTwitter className="hover:text-primary fill-current transition cursor-pointer" />
-              </a>
-            )}
-            {generalSiteFields.youtube && (
-              <a
-                href={generalSiteFields.youtube}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="YouTube"
-              >
-                <FaYoutube className="hover:text-primary fill-current transition cursor-pointer" />
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-      <FooterIcon className="absolute right-0 bottom-0" />
-      <Modal
-        isOpen={isModalOpen}
-        style={modalStyles}
-        contentLabel="Contact Us"
-        onRequestClose={closeModal}
-        shouldCloseOnEsc={true}
-        ariaHideApp={false}
-      >
-        <ModalForm />
-      </Modal>
-    </footer>
+        <FooterIcon className="absolute right-0 bottom-0" />
+        <Modal
+          isOpen={isModalOpen}
+          style={modalStyles}
+          contentLabel="Contact Us"
+          onRequestClose={closeModal}
+          shouldCloseOnEsc={true}
+          ariaHideApp={false}
+        >
+          <ModalForm />
+        </Modal>
+      </footer>
+    </>
   )
 }
 

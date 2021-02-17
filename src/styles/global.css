@@ -435,4 +435,31 @@ footer a:hover {
   header.sticky {
     position: relative;
   }
+
+  .standalone-nav {
+    @apply fixed bottom-0 border-t flex py-4 border-gray-300 bg-white items-center z-50 w-full justify-around lg:hidden;
+  }
+
+  .standalone-nav a,
+  .more-menus a {
+    @apply block text-center focus:text-primary;
+    font-size: 12px;
+  }
+
+  .standalone-nav svg,
+  .more-menus svg {
+    @apply mx-auto mb-2 focus:text-primary fill-current;
+  }
+
+  .more-menus {
+    @apply fixed rounded-30px shadow-2xl border-gray-300 border px-5 z-50 bg-white flex items-center justify-around lg:hidden;
+    bottom: 96px;
+    right: 24px;
+    width: 175px;
+    height: 61px;
+  }
+
+  .ReactModal__Content--after-open {
+    margin-top: 100px;
+  }
 }

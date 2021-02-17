@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import Logo from "../assets/sourcetechnologies-logo.svg"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import GatsbyImage from "gatsby-image"
@@ -8,11 +8,6 @@ import { MenuContext } from "../context/MenuContext"
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa"
 import FooterIcon from "../assets/footerIcon.svg"
 import Modal from "react-modal"
-
-const isInStandaloneMode = () =>
-  window.matchMedia("(display-mode: standalone)").matches ||
-  window.navigator.standalone ||
-  document.referrer.includes("android-app://")
 
 const modalStyles = {
   overlay: {
@@ -35,7 +30,15 @@ const modalStyles = {
   },
 }
 
+let isInStandaloneMode
+
 const Footer = () => {
+  useEffect(() => {
+    isInStandaloneMode =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone ||
+      document.referrer.includes("android-app://")
+  }, [])
   const data = useStaticQuery(graphql`
     {
       wp {
@@ -124,7 +127,7 @@ const Footer = () => {
 
   return (
     <>
-      {isInStandaloneMode() && <h2>Installed</h2>}
+      {isInStandaloneMode && <h2>Installed</h2>}
       <footer className="mt-auto px-4 relative">
         <div className="border-t border-ct-black container-md border-opacity-10 py-12 lg:pt-120px lg:pb-12 relative z-10">
           <div className="footer-upper flex flex-col justify-center items-center text-center lg:flex-row lg:justify-between lg:items-start lg:text-left">

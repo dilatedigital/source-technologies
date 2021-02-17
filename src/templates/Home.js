@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Hero from "../components/Home/Hero"
 import HomeAbout from "../components/Home/HomeAbout"
 import HomeDivision from "../components/Home/HomeDivision"
-//import HomeProjects from "../components/Home/HomeProjects"
+import HomeProjects from "../components/Home/HomeProjects"
 import HomeSource from "../components/Home/HomeSource"
 
 const Home = ({
@@ -36,11 +36,11 @@ const Home = ({
         showArrow={wpPage.homeFields.showArrow}
       />
       <HomeDivision nodes={allWpDivision} />
-      {/* <HomeProjects
+      <HomeProjects
         title={wpPage.homeFields.projectsTitle}
         showSlider={wpPage.homeFields.showProjectSlider}
         slider={allWpProject}
-      /> */}
+      />
       <HomeSource
         title={wpPage.homeFields.sourceTechTitle}
         content={wpPage.homeFields.sourceTechContent}

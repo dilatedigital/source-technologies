@@ -9,7 +9,7 @@ import AboutIcon from "../assets/about.svg"
 import PhoneIcon from "../assets/phone-call.svg"
 
 const FixedBottom = ({ openModal }) => {
-  console.log(openModal)
+  //console.log(openModal)
   const [isMoreMenu, setMoreMenu] = useState(false)
   const showMoreMenu = () => {
     setMoreMenu(!isMoreMenu)
@@ -41,7 +41,12 @@ const FixedBottom = ({ openModal }) => {
             News
           </Link>
         </div>
-        <div onClick={showMoreMenu}>
+        <div
+          onClick={showMoreMenu}
+          onKeyDown={showMoreMenu}
+          role="button"
+          tabIndex={0}
+        >
           <a to="#">
             <MoreIcon />
             More
@@ -56,7 +61,12 @@ const FixedBottom = ({ openModal }) => {
               About
             </Link>
           </div>
-          <div onClick={openModal}>
+          <div
+            onClick={openModal}
+            onKeyDown={openModal}
+            role="button"
+            tabIndex={0}
+          >
             <a to="#">
               <PhoneIcon />
               Contact Us

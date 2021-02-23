@@ -237,7 +237,8 @@
 .sb-featured:after,
 .sb-featured:before,
 .product-img:before,
-.product-img:after {
+.product-img:after,
+.product-img {
   @apply rounded-30px;
 }
 .sb-content p,

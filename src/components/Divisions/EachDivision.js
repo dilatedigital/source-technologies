@@ -1,9 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import BackgroundImage from "gatsby-background-image"
+//import BackgroundImage from "gatsby-background-image"
+import GatsbyImage from "gatsby-image"
+import { SRLWrapper } from "simple-react-lightbox"
 
 const EachDivision = ({ nodes }) => {
-  //console.log(nodes.nodes)
+  console.log(nodes.nodes)
 
   const sorted = nodes.nodes
     .filter(item => item.id !== "cG9zdDozODA=")
@@ -26,30 +28,36 @@ const EachDivision = ({ nodes }) => {
               className="text-center max-w-1090px mx-auto each-division-content"
             />
             {node.divisionFields.images && (
-              <div
-                className={`div-image mt-45px mb-50px lg:grid lg:grid-cols-2 lg:gap-12  ${
-                  node.divisionFields.images.length < 4
-                    ? "justify-center"
-                    : "lg:justify-items-center xl:justify-items-start xl:grid-cols-4"
-                }`}
-              >
-                {node.divisionFields.images.map(image => {
-                  return (
-                    <div
-                      key={image.id}
-                      className="max-w-385px mt-12 mx-auto lg:mx-0 lg:mt-0"
-                    >
-                      <BackgroundImage
-                        fluid={image.image.localFile.childImageSharp.fluid}
-                        className="w-full md:w-385px h-400px mx-auto md:mx-0 product-img"
-                      />
-                      <h4 className="text-larger font-semibold text-center mt-35px">
-                        {image.imageTitle}
-                      </h4>
-                    </div>
-                  )
-                })}
-              </div>
+              <SRLWrapper>
+                <div
+                  className={`div-image mt-45px mb-50px lg:grid lg:grid-cols-2 lg:gap-12  ${
+                    node.divisionFields.images.length < 4
+                      ? "justify-center"
+                      : "lg:justify-items-center xl:justify-items-start xl:grid-cols-4"
+                  }`}
+                >
+                  {node.divisionFields.images.map(image => {
+                    return (
+                      <div
+                        key={image.id}
+                        className="max-w-385px mt-12 mx-auto lg:mx-0 lg:mt-0"
+                      >
+                        <a
+                          href={image.image.localFile.childImageSharp.fluid.src}
+                        >
+                          <GatsbyImage
+                            fluid={image.image.localFile.childImageSharp.fluid}
+                            className="w-full md:w-385px h-400px mx-auto md:mx-0 product-img"
+                          />
+                        </a>
+                        <h4 className="text-larger font-semibold text-center mt-35px">
+                          {image.imageTitle}
+                        </h4>
+                      </div>
+                    )
+                  })}
+                </div>
+              </SRLWrapper>
             )}
 
             {node.divisionFields.showButton && (

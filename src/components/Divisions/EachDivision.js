@@ -8,8 +8,10 @@ import Slider from "react-slick"
 const options = {
   settings: {
     usePreact: true,
-    showThumbnailsButton: false,
     autoplaySpeed: 0,
+  },
+  thumbnails: {
+    showThumbnails: false,
   },
 }
 

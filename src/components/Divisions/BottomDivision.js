@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { CgArrowRight } from "react-icons/cg"
 
 const BottomDivision = ({ bottomContent }) => {
-  console.log(bottomContent)
+  //console.log(bottomContent)
   const imageData = getImage(bottomContent.bottomImage.localFile)
   const { openModal } = useContext(MenuContext)
 

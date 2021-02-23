@@ -4,8 +4,15 @@ import PropTypes from "prop-types"
 import GatsbyImage from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 
+const options = {
+  settings: {
+    usePreact: true,
+    showThumbnailsButton: false,
+  },
+}
+
 const EachDivision = ({ nodes }) => {
-  console.log(nodes.nodes)
+  //console.log(nodes.nodes)
 
   const sorted = nodes.nodes
     .filter(item => item.id !== "cG9zdDozODA=")
@@ -28,7 +35,7 @@ const EachDivision = ({ nodes }) => {
               className="text-center max-w-1090px mx-auto each-division-content"
             />
             {node.divisionFields.images && (
-              <SRLWrapper>
+              <SRLWrapper options={options}>
                 <div
                   className={`div-image mt-45px mb-50px lg:grid lg:grid-cols-2 lg:gap-12  ${
                     node.divisionFields.images.length < 4

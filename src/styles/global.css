@@ -241,6 +241,10 @@
 .product-img {
   @apply rounded-30px;
 }
+
+.product-img {
+  @apply cursor-pointer;
+}
 .sb-content p,
 .about-history-section p,
 .after-team p {

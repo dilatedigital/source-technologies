@@ -13,7 +13,7 @@ const Divisions = ({
   data: { wpPage },
   data: { allWpDivision },
 }) => {
-  //console.log(wpPage)
+  //console.log(allWpDivision)
   return (
     <Layout>
       <SEO

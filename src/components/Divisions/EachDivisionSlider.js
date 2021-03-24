@@ -42,7 +42,7 @@ const EachDivisionSlider = ({ images }) => {
     ],
   }
   return (
-    <div class="relative">
+    <div class="relative each-div-slider">
       <SRLWrapper options={options}>
         <div
           className={`div-image mt-45px mb-50px lg:block lg:grid-cols-2 lg:gap-12  ${
@@ -73,22 +73,21 @@ const EachDivisionSlider = ({ images }) => {
           </Slider>
         </div>
       </SRLWrapper>
-      <div className="absolute w-full flex justify-between slider-btn-container">
-        <button
-          onClick={prev}
-          aria-label="Previous Slide"
-          className="slider-btn slider-btn-prev"
-        >
-          <CgArrowLeft className="text-3xl" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next Slide"
-          className="slider-btn slider-btn-next"
-        >
-          <CgArrowRight className="text-3xl" />
-        </button>
-      </div>
+
+      <button
+        onClick={prev}
+        aria-label="Previous Slide"
+        className="slider-btn slider-btn-prev"
+      >
+        <CgArrowLeft className="text-3xl" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next Slide"
+        className="slider-btn slider-btn-next"
+      >
+        <CgArrowRight className="text-3xl" />
+      </button>
     </div>
   )
 }

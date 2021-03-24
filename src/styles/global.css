@@ -385,6 +385,20 @@ footer a:hover {
   width: 340px;
 }
 
+.each-div-slider .slider-btn {
+  @apply absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.each-div-slider .slider-btn.slider-btn-next {
+  @apply left-auto right-0;
+}
+
+.each-div-slider .slick-slide > div {
+  @apply text-center;
+}
+
 @media screen and (min-width: 768px) {
   .ReactModal__Content--after-open {
     margin-top: 0;
@@ -426,6 +440,14 @@ footer a:hover {
 @media screen and (min-width: 1280px) {
   .st-ft-logo-container {
     @apply max-w-450px;
+  }
+
+  .each-div-slider .slider-btn {
+    left: -85px;
+  }
+
+  .each-div-slider .slider-btn.slider-btn-next {
+    right: -85px;
   }
 }
 

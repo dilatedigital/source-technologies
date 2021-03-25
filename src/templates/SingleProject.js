@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Home/Hero"
+import ProjectSlider from "../components/Home/ProjectSlider"
 
 const SingleProject = ({
   data: {
@@ -11,6 +12,7 @@ const SingleProject = ({
   data: { wpProject },
 }) => {
   const heroImage = wpProject.featuredImage
+
   return (
     <Layout>
       <SEO
@@ -25,8 +27,11 @@ const SingleProject = ({
       <Hero title={title} home={true} project={true} heroFields={heroImage} />
       <div
         dangerouslySetInnerHTML={{ __html: content }}
-        className="sb-content container-sm px-4 py-14 xl:py-130px"
+        className="sb-content container-sm px-4 pt-14 pb-0 xl:pt-130px xl:pb-8"
       />
+      <section className="px-4 pb-14 xl:pb-130px">
+        <ProjectSlider singleProj={true} nodes={wpProject.projectFields} />
+      </section>
     </Layout>
   )
 }
@@ -50,6 +55,15 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(placeholder: TRACED_SVG)
+            }
+          }
+        }
+      }
+      projectFields {
+        projectGallery {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }

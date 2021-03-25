@@ -13,7 +13,7 @@ const ProjectSlider = ({ nodes, singleProj }) => {
   } else {
     slideItems = nodes.projectGallery
   }
-  console.log(slideItems)
+
   const customSlider = useRef()
   const next = () => {
     customSlider.current.slickNext()

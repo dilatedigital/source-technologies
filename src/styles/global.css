@@ -67,6 +67,42 @@
 .heroImage .gatsby-image-wrapper {
   @apply object-cover w-full h-full;
 }
+
+.hero-svg .st0,
+.hero-svg .st1 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+.hero-svg .st0 {
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+.hero-svg .st1 {
+  stroke: #ffffff;
+}
+.hero-svg .st2 {
+  fill: #ffffff;
+}
+.hero-svg .st3 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
+.home-flex {
+  @apply lg:flex items-center;
+}
+.home-flex .hero-home-text {
+  max-width: 500px;
+  @apply w-full;
+}
+.home-flex .hero-svg {
+  @apply hidden lg:block lg:w-full;
+}
+.home-flex .hero-svg svg {
+  width: 755px;
+  height: 500px;
+  @apply mx-auto;
+}
 .menu-open {
   @apply overflow-hidden;
 }

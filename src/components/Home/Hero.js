@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import HeroWave from "../../assets/herowave.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import AnimatedSVG from "./AnimatedSVG"
 
 const query = graphql`
   query {
@@ -54,29 +55,35 @@ const Hero = ({ home, heroFields, title, project }) => {
     >
       <div
         className={`relative z-10 px-4 ${
-          home && !project ? "xl:h-hero-content" : "xl:h-auto"
+          home && !project ? "xl:h-hero-content home-flex" : "xl:h-auto"
         } ${!home && !project ? "container-inner" : "container-lg"}`}
       >
-        {heroFields?.suptitle && (
-          <h4 className="font-quest text-md relative xl:-top-50px green-line">
-            {heroFields.suptitle}
-          </h4>
-        )}
+        <div className="hero-home-text">
+          {heroFields?.suptitle && (
+            <h4 className="font-quest text-md relative xl:-top-50px green-line">
+              {heroFields.suptitle}
+            </h4>
+          )}
 
-        <h1
-          dangerouslySetInnerHTML={{
-            __html: bannerTitle,
-          }}
-          className={`text-4xl mb-2 mt-2 xl:text-hero-h1 font-medium ${
-            home ? "xl:mb-35px xl:-mt-15px" : "xl:mb-0 xl:-mt-85px"
-          } ${project ? "max-w-685px" : ""} `}
-        />
-        {heroText && (
-          <div
-            dangerouslySetInnerHTML={{ __html: heroText }}
-            className={`text-md ${home ? "max-w-600px" : "max-w-400px mt-4"} `}
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: bannerTitle,
+            }}
+            className={`text-4xl mb-2 mt-2 xl:text-hero-h1 font-medium ${
+              home ? "xl:mb-35px xl:-mt-15px" : "xl:mb-0 xl:-mt-85px"
+            } ${project ? "max-w-685px" : ""} `}
           />
-        )}
+          {heroText && (
+            <div
+              dangerouslySetInnerHTML={{ __html: heroText }}
+              className={`text-md ${
+                home ? "max-w-600px" : "max-w-400px mt-4"
+              } `}
+            />
+          )}
+        </div>
+
+        {home && <AnimatedSVG />}
       </div>
 
       <div className={`heroImage lg:max-w-full`}>

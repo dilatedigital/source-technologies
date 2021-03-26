@@ -83,7 +83,7 @@ const Hero = ({ home, heroFields, title, project }) => {
           )}
         </div>
 
-        {home && <AnimatedSVG />}
+        {home && !project && <AnimatedSVG />}
       </div>
 
       <div className={`heroImage lg:max-w-full`}>

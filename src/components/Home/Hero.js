@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import HeroWave from "../../assets/herowave.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import AnimatedSVG from "./AnimatedSVG"
 
 const query = graphql`
   query {
@@ -82,8 +81,6 @@ const Hero = ({ home, heroFields, title, project }) => {
             />
           )}
         </div>
-
-        {home && !project && <AnimatedSVG />}
       </div>
 
       <div className={`heroImage lg:max-w-full`}>

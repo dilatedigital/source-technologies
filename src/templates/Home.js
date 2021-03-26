@@ -7,6 +7,7 @@ import HomeAbout from "../components/Home/HomeAbout"
 import HomeDivision from "../components/Home/HomeDivision"
 import HomeProjects from "../components/Home/HomeProjects"
 import HomeSource from "../components/Home/HomeSource"
+import HomeHero from "../components/Home/HomeHero"
 
 const Home = ({
   data: { wpPage },
@@ -25,8 +26,8 @@ const Home = ({
             : null
         }
       />
-      <Hero home={true} heroFields={wpPage.homeFields} />
 
+      <HomeHero heroFields={wpPage.homeFields} />
       <HomeAbout
         showLearnMoreButton={wpPage.homeFields.showLearnMoreButton}
         aboutUsContent={wpPage.homeFields.aboutUsContent}

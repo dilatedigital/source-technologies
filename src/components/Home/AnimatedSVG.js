@@ -230,10 +230,10 @@ const AnimatedSVG = () => {
               key={icon.key}
               variants={item}
               transition={{ type: "tween" }}
-              // style={{
-              //   originX: "center",
-              //   originY: "center",
-              // }}
+              style={{
+                originX: "center",
+                originY: "center",
+              }}
             >
               {icon}
             </motion.g>

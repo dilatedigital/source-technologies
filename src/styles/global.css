@@ -96,7 +96,8 @@
   @apply w-full;
 }
 .home-flex .hero-svg {
-  @apply hidden lg:block lg:w-full;
+  @apply hidden lg:block lg:w-full lg:ml-auto;
+  width: 800px;
 }
 .home-flex .hero-svg svg {
   width: 755px;

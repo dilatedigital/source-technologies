@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import HeroWave from "../../assets/herowave.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import AnimatedSVG from "./AnimatedSVG"
+import AnimatedSVGSlider from "./AnimatedSVGSlider"
 
 const query = graphql`
   query {
@@ -36,7 +36,7 @@ const HomeHero = ({ heroFields }) => {
       className={`hero-section relative h-80 md:h-inner-hero xl:h-hero flex items-center`}
     >
       <div
-        className={`relative z-10 px-4 xl:h-hero-content home-flex container-lg`}
+        className={`relative z-10 px-4 xl:h-single-feature home-flex container-lg`}
       >
         <div className="hero-home-text">
           {heroFields?.suptitle && (
@@ -59,7 +59,7 @@ const HomeHero = ({ heroFields }) => {
           )}
         </div>
 
-        <AnimatedSVG />
+        <AnimatedSVGSlider />
       </div>
 
       <div className={`heroImage lg:max-w-full`}>

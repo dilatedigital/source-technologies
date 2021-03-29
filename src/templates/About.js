@@ -13,7 +13,7 @@ const About = ({ data: { wpPage } }) => {
   //console.log(wpPage)
   //divide years to two per slide
   //const years = chunk(wpPage.aboutPageFields.years, 2)
-  console.log(wpPage.aboutPageFields.years)
+
   return (
     <Layout>
       <SEO

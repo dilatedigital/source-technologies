@@ -59,7 +59,9 @@ const HomeHero = ({ heroFields }) => {
           )}
         </div>
 
-        <AnimatedSVGSlider />
+        <div className="hero-svg">
+          <AnimatedSVGSlider />
+        </div>
       </div>
 
       <div className={`heroImage lg:max-w-full`}>

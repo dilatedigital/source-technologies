@@ -15,6 +15,7 @@ const options = {
 }
 
 const EachDivisionSlider = ({ images }) => {
+  console.log(images.length)
   const sourceSlider = useRef(null)
   const next = () => {
     sourceSlider.current.slickNext()
@@ -27,7 +28,7 @@ const EachDivisionSlider = ({ images }) => {
     arrows: false,
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: images.length > 3 ? 4 : 3,
     slidesToScroll: 1,
     draggable: true,
     autoplay: false,

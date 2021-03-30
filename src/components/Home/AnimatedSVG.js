@@ -1,5 +1,5 @@
 import React from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 function Icon1() {
   return (
@@ -169,6 +169,35 @@ const lines = [
   "M371.3 186l2-69.1 71.3-3.5M99.9 230.3l42.8-.3m391 .6l69.1-.5m-363.7 119l56.2 2.2L298 273m45.5.5l-4.2 138.4 47.3 2.9",
 ]
 
+export const linesVariant = {
+  hidden: {
+    pathLength: 0,
+    fill: "rgba(255, 255, 255, 0)",
+  },
+  visible: {
+    pathLength: 1,
+    fill: "rgba(255, 255, 255, 1)",
+  },
+}
+
+export const containerVariant = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    scale: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
+
+export const item = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+  },
+}
+
 const AnimatedSVG = () => {
   const icons = [
     <Icon1 key="icon-1" />,
@@ -179,39 +208,10 @@ const AnimatedSVG = () => {
     <Icon6 key="icon-6" />,
   ]
 
-  const item = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-    },
-  }
-
-  const linesVariant = {
-    hidden: {
-      pathLength: 0,
-      fill: "rgba(255, 255, 255, 0)",
-    },
-    visible: {
-      pathLength: 1,
-      fill: "rgba(255, 255, 255, 1)",
-    },
-  }
-
-  const containerVariant = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      scale: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  }
-
   //const [toggle, setToggle] = useState(false)
 
   return (
-    <AnimatePresence>
+    <div className="svg-1">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         x="0"
@@ -223,6 +223,7 @@ const AnimatedSVG = () => {
         initial="hidden"
         animate="visible"
         transition={{ type: "tween" }}
+        exit={{ opacity: 0 }}
       >
         {icons.map(icon => {
           return (
@@ -266,7 +267,7 @@ const AnimatedSVG = () => {
           ></path>
         </g>
       </motion.svg>
-    </AnimatePresence>
+    </div>
   )
 }
 

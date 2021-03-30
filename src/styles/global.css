@@ -68,31 +68,52 @@
   @apply object-cover w-full h-full;
 }
 
-.hero-svg .st0,
-.hero-svg .st1 {
+.svg-1 .st0,
+.svg-1 .st1 {
   fill: none;
   stroke-miterlimit: 10;
 }
-.hero-svg .st0 {
+.svg-1 .st0 {
   stroke: #ffffff;
   stroke-width: 3;
 }
-.hero-svg .st1 {
+.svg-1 .st1 {
   stroke: #ffffff;
+  stroke-width: 3;
 }
-.hero-svg .st2 {
+.svg-1 .st2 {
   fill: #ffffff;
 }
-.hero-svg .st3 {
+.svg-1 .st3 {
   fill: none;
   stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
+
+.svg-2 .st0 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
+.svg-2 .st1 {
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+.svg-2 .st2 {
+  fill: #ffffff;
+}
+.svg-2 .st3 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
   stroke-miterlimit: 10;
 }
 .home-flex {
   @apply lg:flex items-center;
 }
 .home-flex .hero-home-text {
-  max-width: 500px;
+  max-width: 800px;
   @apply w-full;
 }
 .home-flex .hero-svg {
@@ -213,6 +234,7 @@
   background: #f1f1f1;
   @apply rounded-2xl leading-5 text-center py-4 px-2 flex items-center justify-center;
 }
+
 .sub-distribution {
   max-width: 658px;
   @apply w-full p-10;

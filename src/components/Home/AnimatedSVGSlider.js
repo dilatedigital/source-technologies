@@ -1,29 +1,22 @@
-import React, { useRef } from "react"
-import Slider from "react-slick"
+import React, { useEffect } from "react"
+import { useCycle, AnimatePresence } from "framer-motion"
 import AnimatedSVG from "./AnimatedSVG"
+import AnimatedSVG2 from "./AnimatedSVG2"
 
 const AnimatedSVGSlider = () => {
-  const settings = {
-    arrows: false,
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    draggable: false,
-    autoplay: true,
-    autoplaySpeed: 6000,
-    fade: true,
-  }
+  const [cycle, setCycle] = useCycle(0, 1)
 
-  const heroSlider = useRef()
-  return (
-    <div className="hero-svg">
-      <Slider {...settings} ref={heroSlider}>
-        <AnimatedSVG />
-        <AnimatedSVG />
-      </Slider>
-    </div>
-  )
+  const svgs = [<AnimatedSVG />, <AnimatedSVG2 />]
+
+  useEffect(() => {
+    const slideshowTimer = setTimeout(() => {
+      setCycle()
+      console.log(cycle)
+    }, 6000)
+    return () => clearTimeout(slideshowTimer)
+  })
+
+  return <AnimatePresence exitBeforeEnter>{svgs[cycle]}</AnimatePresence>
 }
 
 export default AnimatedSVGSlider

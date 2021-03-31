@@ -90,25 +90,30 @@
   stroke-miterlimit: 10;
 }
 
-.svg-2 .st0 {
+.svg-2 .st0,
+.svg-2 .st1,
+.svg-3 .st0 {
   fill: none;
   stroke: #ffffff;
   stroke-miterlimit: 10;
 }
-.svg-2 .st1 {
-  stroke: #ffffff;
-  stroke-miterlimit: 10;
-  fill: none;
-}
-.svg-2 .st2 {
+
+.svg-2 .st2,
+.svg-3 .st2 {
   fill: #ffffff;
 }
-.svg-2 .st3 {
+.svg-2 .st3,
+.svg-3 .st2 {
   fill: none;
   stroke: #ffffff;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
+
+.svg-3 .st1 {
+  fill: #ffffff;
+}
+
 .home-flex {
   @apply lg:flex items-center;
 }

@@ -12,7 +12,6 @@ const AnimatedSVGSlider = () => {
   useEffect(() => {
     const slideshowTimer = setTimeout(() => {
       setCycle()
-      console.log(cycle)
     }, 6000)
     return () => clearTimeout(slideshowTimer)
   })

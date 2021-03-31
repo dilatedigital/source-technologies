@@ -7,6 +7,8 @@ import { FiChevronDown } from "react-icons/fi"
 import Close from "../../assets/close.svg"
 import Loading from "../../assets/loading.svg"
 
+let recipient
+
 const ModalForm = () => {
   const formLink = process.env.GATSBY_HOMEFORM
 
@@ -22,6 +24,31 @@ const ModalForm = () => {
 
   const { closeModal } = useContext(MenuContext)
 
+  const handleRecipient = value => {
+    switch (value) {
+      case "Audio":
+        recipient = "audioenquiries@sourcetechnologies.com.au"
+        break
+      case "Automation":
+        recipient = "automationenquiries@sourcetechnologies.com.au"
+        break
+      case "Intrusion":
+        recipient = "intrusionenquiries@sourcetechnologies.com.au"
+        break
+      case "Video":
+        recipient = "videoenquiries@sourcetechnologies.com.au"
+        break
+      case "Accounts":
+        recipient = "accountenquiries@sourcetechnologies.com.au"
+        break
+      case "Other":
+        recipient = "otherenquiries@sourcetechnologies.com.au"
+        break
+      default:
+        recipient = "info@sourcetechnologies.com.au"
+    }
+  }
+
   const onSubmit = data => {
     setFormSubmit(true)
     let bodyFormData = new FormData()
@@ -34,6 +61,7 @@ const ModalForm = () => {
     bodyFormData.append("phone-number", data.phoneNumber)
     bodyFormData.append("enquiry-details", data.enquiryDetails)
     bodyFormData.append("company-name", data.companyName)
+    bodyFormData.append("your-recipient", recipient)
 
     axios
       .post(formLink, bodyFormData)
@@ -204,10 +232,14 @@ const ModalForm = () => {
                     errors.enquiryType ? "ring-2 ring-red-500" : ""
                   }`}
                   required
+                  onChange={e => {
+                    handleRecipient(e.target.value)
+                  }}
                 >
                   <option value="">Please select</option>
                   <option value="Audio">Audio</option>
                   <option value="Automation">Automation</option>
+                  <option value="Distribution">Distribution</option>
                   <option value="Intrusion">Intrusion</option>
                   <option value="Video">Video</option>
                   <option value="Accounts">Accounts</option>

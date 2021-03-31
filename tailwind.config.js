@@ -36,6 +36,7 @@ module.exports = {
         lg: ["20px", "30px"],
         larger: ["22px", "28px"],
         "hero-h1": ["92px", "92px"],
+        "hero-h1-smaller": ["72px", "82px"],
         h2: ["42px", "56px"],
         "slider-h3": ["26px", "40px"],
         "slider-p": ["16px", "32px"],
@@ -109,6 +110,7 @@ module.exports = {
       },
       height: {
         hero: "calc(100vh + 100px)",
+        "hero-mobile": "30rem",
         "inner-hero": "670px",
         "hero-content": "395px",
         btn: "60px",

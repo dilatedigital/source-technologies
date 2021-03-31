@@ -33,7 +33,7 @@ const HomeHero = ({ heroFields }) => {
 
   return (
     <section
-      className={`hero-section relative h-80 md:h-inner-hero xl:h-hero flex items-center`}
+      className={`hero-section relative h-hero-mobile md:h-inner-hero xl:h-hero flex items-center`}
     >
       <div
         className={`relative z-10 px-4 xl:h-single-feature home-flex container-lg`}
@@ -49,12 +49,12 @@ const HomeHero = ({ heroFields }) => {
             dangerouslySetInnerHTML={{
               __html: bannerTitle,
             }}
-            className={`text-4xl mb-2 mt-2 xl:text-hero-h1 font-medium xl:mb-35px xl:-mt-15px`}
+            className={`text-4xl mb-2 mt-2 xl:text-hero-h1-smaller font-medium xl:mb-35px xl:-mt-15px`}
           />
           {heroText && (
             <div
               dangerouslySetInnerHTML={{ __html: heroText }}
-              className={`text-md max-w-600px`}
+              className={`text-md max-w-600px text-white xl:text-ct-black`}
             />
           )}
         </div>

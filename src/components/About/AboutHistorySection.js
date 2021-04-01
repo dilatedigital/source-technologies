@@ -48,7 +48,7 @@ const AboutHistorySection = ({
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: year.yearContent }}
-                  className="max-w-535px w-full"
+                  className="max-w-535px w-full lg:ml-8"
                 />
               </div>
             </div>

@@ -232,7 +232,7 @@ const ModalForm = () => {
                     errors.enquiryType ? "ring-2 ring-red-500" : ""
                   }`}
                   required
-                  onChange={e => {
+                  onBlur={e => {
                     handleRecipient(e.target.value)
                   }}
                 >

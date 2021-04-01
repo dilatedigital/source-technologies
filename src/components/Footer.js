@@ -5,7 +5,7 @@ import GatsbyImage from "gatsby-image"
 import FooterCol from "./FooterCol"
 import ModalForm from "../components/Forms/ModalForm"
 import { MenuContext } from "../context/MenuContext"
-import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa"
+import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa"
 import FooterIcon from "../assets/footerIcon.svg"
 import Modal from "react-modal"
 import FixedBottom from "./FixedBottom"
@@ -77,6 +77,7 @@ const Footer = () => {
             facebook
             twitter
             youtube
+            linkedin
             address {
               googleMapLink
               number
@@ -183,7 +184,7 @@ const Footer = () => {
                 generalSiteFields.companyName
               }. All Rights Reserved.`}
             </div>
-            <div className="mt-2 text-lg flex justify-center lg:mt-0 lg:mr-110px">
+            <div className="mt-2 text-lg flex justify-center lg:mt-0 ">
               {generalSiteFields.facebook && (
                 <a
                   href={generalSiteFields.facebook}
@@ -214,6 +215,16 @@ const Footer = () => {
                   aria-label="YouTube"
                 >
                   <FaYoutube className="hover:text-primary fill-current transition cursor-pointer" />
+                </a>
+              )}
+              {generalSiteFields.linkedin && (
+                <a
+                  href={generalSiteFields.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                >
+                  <FaLinkedinIn className="hover:text-primary fill-current transition cursor-pointer" />
                 </a>
               )}
             </div>

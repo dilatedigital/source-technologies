@@ -17,6 +17,7 @@
     "gatsby-plugin-apollo": "^3.0.2",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
+    "gatsby-plugin-no-index": "^1.0.2",
     "gatsby-plugin-offline": "^4.0.0",
     "gatsby-plugin-postcss": "^4.0.0",
     "gatsby-plugin-preact": "^5.0.0",

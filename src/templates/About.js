@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 //import { chunk } from "lodash"
 import AboutHistorySection from "../components/About/AboutHistorySection"
 import AboutTopContent from "../components/About/AboutTopContent"
@@ -16,7 +16,7 @@ const About = ({ data: { wpPage } }) => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={wpPage.seo.title}
         description={wpPage.seo.metaDesc}
         image={

@@ -82,7 +82,7 @@ const ProjectSlider = ({ nodes, singleProj }) => {
           )
         })}
       </Slider>
-      {slideItems.length > 2 && (
+      {slideItems.length >= 2 && (
         <div className="absolute w-full flex justify-between slider-btn-container">
           <button
             onClick={prev}

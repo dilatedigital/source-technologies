@@ -184,7 +184,7 @@ const Footer = () => {
                 generalSiteFields.companyName
               }. All Rights Reserved.`}
             </div>
-            <div className="mt-2 text-lg flex justify-center lg:mt-0 ">
+            <div className="mt-2 text-lg flex justify-center lg:mt-0 lg:mr-217px footer-social-container">
               {generalSiteFields.facebook && (
                 <a
                   href={generalSiteFields.facebook}

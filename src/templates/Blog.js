@@ -4,7 +4,7 @@ import EachBlogItem from "../components/Blog/EachBlogItem"
 import Hero from "../components/Home/Hero"
 import Layout from "../components/layout"
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc"
-import Seo from "../components/seo"
+import SEO from "../components/seo"
 
 const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
   //console.log(pageContext)
@@ -18,7 +18,7 @@ const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
 
   return (
     <Layout>
-      <Seo
+      <SEO
         title={wpPage.seo.title}
         description={wpPage.seo.metaDesc}
         image={

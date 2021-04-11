@@ -63,7 +63,11 @@ const ProjectSlider = ({ nodes, singleProj }) => {
 
           return (
             <div key={slideItem.id}>
-              <div className="slider-image-container">
+              <div
+                className={`slider-image-container ${
+                  slideItems.length <= 3 ? "mx-auto" : ""
+                }`}
+              >
                 <GatsbyImage image={imageData} alt="Project" />
               </div>
 

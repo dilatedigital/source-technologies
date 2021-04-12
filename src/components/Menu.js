@@ -34,7 +34,7 @@ const Menu = ({ menu }) => {
 
             {menuItem.children.length > 0 && <FiChevronDown className="ml-2" />}
             {menuItem.children.length > 0 && (
-              <ul className="hidden submenu absolute w-250px bg-white shadow-2xl transition-all py-4 top-25px rounded-lg">
+              <ul className="hidden submenu absolute w-250px bg-white bg-opacity-50 shadow-2xl transition-all py-4 top-25px rounded-lg">
                 {menuItem.children.map(subItem => {
                   return (
                     <li

@@ -254,7 +254,8 @@
   @apply w-slider-img-default h-slider-img-default rounded-xl overflow-hidden;
 }
 
-.custom-slider .slider-image-container .gatsby-image-wrapper {
+.custom-slider .slider-image-container .gatsby-image-wrapper,
+.custom-slider .slider-image-container .react_lightgallery_item {
   @apply h-full;
 }
 .custom-slider .slick-slide > div {

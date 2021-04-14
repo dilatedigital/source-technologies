@@ -81,7 +81,8 @@
   stroke: #ffffff;
   stroke-width: 3;
 }
-.svg-1 .st2 {
+.svg-1 .st2,
+.svg-security .st1 {
   fill: #ffffff;
 }
 .svg-1 .st3 {
@@ -92,18 +93,26 @@
 
 .svg-2 .st0,
 .svg-2 .st1,
-.svg-3 .st0 {
+.svg-3 .st0,
+.svg-security .st0,
+.svg-audio .st0,
+.svg-automation .st0 {
   fill: none;
   stroke: #ffffff;
   stroke-miterlimit: 10;
 }
 
 .svg-2 .st2,
-.svg-3 .st2 {
+.svg-3 .st2,
+.svg-audio .st1,
+.svg-automation .st2 {
   fill: #ffffff;
 }
 .svg-2 .st3,
-.svg-3 .st2 {
+.svg-3 .st2,
+.svg-security .st5,
+.svg-audio .st5,
+.svg-automation .st1 {
   fill: none;
   stroke: #ffffff;
   stroke-width: 3;
@@ -112,6 +121,29 @@
 
 .svg-3 .st1 {
   fill: #ffffff;
+}
+
+.svg-security .st2,
+.svg-audio .st2,
+.svg-automation .st3 {
+  @apply hidden;
+}
+
+.svg-security .st3 {
+  fill: #ed1c24;
+}
+
+.svg-audio .st3 {
+  fill: #008cd3;
+}
+
+.svg-security .st4,
+.svg-security .st3,
+.svg-audio .st3,
+.svg-audio .st4,
+.svg-automation .st4,
+.svg-automation .st5 {
+  @apply inline;
 }
 
 .home-flex {

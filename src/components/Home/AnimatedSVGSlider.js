@@ -1,13 +1,12 @@
 import React, { useEffect } from "react"
 import { useCycle, AnimatePresence } from "framer-motion"
-import AnimatedSVG from "./AnimatedSVG"
-import AnimatedSVG2 from "./AnimatedSVG2"
-import AnimatedSVG3 from "./AnimatedSVG3"
+import ReAnimatedSvg1 from "./ReAnimatedSvg1"
+import ReAnimatedSvg2 from "./ReAnimatedSvg2"
 
 const AnimatedSVGSlider = () => {
-  const [cycle, setCycle] = useCycle(0, 1, 2)
+  const [cycle, setCycle] = useCycle(0, 1)
 
-  const svgs = [<AnimatedSVG />, <AnimatedSVG2 />, <AnimatedSVG3 />]
+  const svgs = [<ReAnimatedSvg1 />, <ReAnimatedSvg2 />]
 
   useEffect(() => {
     const slideshowTimer = setTimeout(() => {

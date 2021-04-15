@@ -5,9 +5,6 @@ import HeroWave from "../../assets/herowave.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import AnimatedSVGSlider from "./AnimatedSVGSlider"
-import ReAnimatedSvg1 from "./ReAnimatedSvg1"
-import ReAnimatedSvg2 from "./ReAnimatedSvg2"
-import ReAnimatedSVG3 from "./ReAnimatedSVG3"
 
 const query = graphql`
   query {
@@ -63,10 +60,7 @@ const HomeHero = ({ heroFields }) => {
         </div>
 
         <div className="hero-svg">
-          {/* <AnimatedSVGSlider /> */}
-          {/* <ReAnimatedSvg1 /> */}
-          {/* <ReAnimatedSvg2 /> */}
-          <ReAnimatedSVG3 />
+          <AnimatedSVGSlider />
         </div>
       </div>
 

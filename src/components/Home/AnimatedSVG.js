@@ -172,29 +172,29 @@ const lines = [
 export const linesVariant = {
   hidden: {
     pathLength: 0,
+    opacity: 0,
     fill: "rgba(255, 255, 255, 0)",
   },
   visible: {
     pathLength: 1,
+    opacity: 1,
     fill: "rgba(255, 255, 255, 1)",
   },
 }
 
 export const containerVariant = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden: { opacity: 1 },
   visible: {
-    scale: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.5,
     },
   },
 }
 
 export const item = {
-  hidden: { opacity: 0, scale: 0 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
   },
 }
 

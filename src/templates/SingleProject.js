@@ -65,6 +65,7 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData
             }
+            publicURL
           }
         }
       }

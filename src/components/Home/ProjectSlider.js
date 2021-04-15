@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 import Slider from "react-slick"
 import { CgArrowLeft, CgArrowRight } from "react-icons/cg"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import "lightgallery/dist/css/lightgallery.min.css"
 
 const ProjectSlider = ({ nodes, singleProj }) => {
   let slideItems
@@ -51,41 +53,52 @@ const ProjectSlider = ({ nodes, singleProj }) => {
         slideItems.length <= 3 ? "proj-less-slider" : ""
       }`}
     >
-      <Slider
-        {...settings}
-        ref={customSlider}
-        className="custom-slider slider-container mx-auto"
-      >
-        {slideItems.map(slideItem => {
-          const imageData = !singleProj
-            ? getImage(slideItem.featuredImage.node.localFile)
-            : getImage(slideItem.localFile)
+      <LightgalleryProvider>
+        <Slider
+          {...settings}
+          ref={customSlider}
+          className="custom-slider slider-container mx-auto"
+        >
+          {slideItems.map(slideItem => {
+            const imageData = !singleProj
+              ? getImage(slideItem.featuredImage.node.localFile)
+              : getImage(slideItem.localFile)
 
-          return (
-            <div key={slideItem.id}>
-              <div
-                className={`slider-image-container ${
-                  slideItems.length <= 3 ? "mx-auto" : ""
-                }`}
-              >
-                <GatsbyImage image={imageData} alt="Project" />
-              </div>
-
-              {!singleProj && (
-                <div className="slider-info mt-50px">
-                  <h3 className="font-semibold text-slider-h3">
-                    {slideItem.title}
-                  </h3>
-                  <div
-                    dangerouslySetInnerHTML={{ __html: slideItem.excerpt }}
-                    className="mt-20px"
-                  />
+            return (
+              <div key={slideItem.id}>
+                <div
+                  className={`slider-image-container ${
+                    slideItems.length <= 3 ? "mx-auto" : ""
+                  }`}
+                >
+                  {!singleProj ? (
+                    <GatsbyImage image={imageData} alt="Project" />
+                  ) : (
+                    <LightgalleryItem
+                      src={slideItem.localFile.publicURL}
+                      group="any"
+                    >
+                      <GatsbyImage image={imageData} alt="Project" />
+                    </LightgalleryItem>
+                  )}
                 </div>
-              )}
-            </div>
-          )
-        })}
-      </Slider>
+
+                {!singleProj && (
+                  <div className="slider-info mt-50px">
+                    <h3 className="font-semibold text-slider-h3">
+                      {slideItem.title}
+                    </h3>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: slideItem.excerpt }}
+                      className="mt-20px"
+                    />
+                  </div>
+                )}
+              </div>
+            )
+          })}
+        </Slider>
+      </LightgalleryProvider>
       {slideItems.length >= 2 && (
         <div className="absolute w-full flex justify-between slider-btn-container">
           <button

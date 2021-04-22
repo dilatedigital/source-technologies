@@ -127,6 +127,7 @@ export const query = graphql`
         title
         excerpt
         id
+        slug
       }
     }
   }

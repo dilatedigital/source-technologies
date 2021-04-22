@@ -7,8 +7,10 @@ import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "lightgallery/dist/css/lightgallery.min.css"
+import { Link } from "gatsby"
 
 const ProjectSlider = ({ nodes, singleProj }) => {
+  console.log(nodes)
   let slideItems
   if (!singleProj) {
     slideItems = nodes.nodes
@@ -28,7 +30,7 @@ const ProjectSlider = ({ nodes, singleProj }) => {
     arrows: false,
     dots: false,
     infinite: true,
-    slidesToShow: slideItems.length <= 3 ? 1 : 3,
+    slidesToShow: slideItems.length < 3 ? 1 : 3,
     slidesToScroll: 1,
     draggable: false,
     autoplay: false,
@@ -72,7 +74,9 @@ const ProjectSlider = ({ nodes, singleProj }) => {
                   }`}
                 >
                   {!singleProj ? (
-                    <GatsbyImage image={imageData} alt="Project" />
+                    <Link to={`/projects/${slideItem.slug}/`}>
+                      <GatsbyImage image={imageData} alt="Project" />
+                    </Link>
                   ) : (
                     <LightgalleryItem
                       src={slideItem.localFile.publicURL}
@@ -89,7 +93,12 @@ const ProjectSlider = ({ nodes, singleProj }) => {
                       {slideItem.title}
                     </h3>
                     <div
-                      dangerouslySetInnerHTML={{ __html: slideItem.excerpt }}
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          slideItem.excerpt.length > 100
+                            ? `${slideItem.excerpt.substring(0, 110)}...`
+                            : slideItem.excerpt,
+                      }}
                       className="mt-20px"
                     />
                   </div>
@@ -99,8 +108,12 @@ const ProjectSlider = ({ nodes, singleProj }) => {
           })}
         </Slider>
       </LightgalleryProvider>
-      {slideItems.length >= 2 && (
-        <div className="absolute w-full flex justify-between slider-btn-container">
+      {slideItems.length >= 2 && slideItems.length != 3 && (
+        <div
+          className={`absolute w-full flex justify-between slider-btn-container ${
+            slideItems.length <= 2 ? "short-slider-btn-container" : ""
+          }`}
+        >
           <button
             onClick={prev}
             aria-label="Previous Slide"

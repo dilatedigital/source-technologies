@@ -49,12 +49,13 @@ const EachDivisionSlider = ({ images }) => {
                 className="max-w-385px mt-12 mx-auto lg:mx-0 lg:mt-0"
               >
                 {image.link ? (
-                  <a href={image.link} target="_blank" rel="noreferrer">
+                  <>
                     <GatsbyImage
                       fluid={image.image.localFile.childImageSharp.fluid}
                       className="w-full md:w-385px h-400px mx-auto md:mx-0 product-img"
                     />
-                  </a>
+                    <a href={image.link} target="_blank" rel="noreferrer"></a>
+                  </>
                 ) : (
                   <GatsbyImage
                     fluid={image.image.localFile.childImageSharp.fluid}

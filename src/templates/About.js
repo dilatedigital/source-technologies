@@ -93,6 +93,7 @@ export const query = graphql`
         }
       }
       innerPagesHeroFields {
+        bannerContent
         heroImage {
           localFile {
             childImageSharp {

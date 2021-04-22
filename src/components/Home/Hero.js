@@ -36,7 +36,7 @@ const Hero = ({ home, heroFields, title, project }) => {
 
   let bannerImage
 
-  //console.log(heroFields)
+  console.log(heroText)
 
   if (!heroFields.heroImage && !project) {
     bannerImage = getImage(heroImage)

@@ -65,7 +65,11 @@ const HomeHero = ({ heroFields }) => {
       </div>
 
       <div className={`heroImage lg:max-w-full`}>
-        <GatsbyImage image={bannerImage} alt="Source Technologies Au" />
+        <GatsbyImage
+          image={bannerImage}
+          alt="Source Technologies Au"
+          loading="eager"
+        />
       </div>
 
       <HeroWave className="absolute bottom-0" />

@@ -11,7 +11,7 @@ const textContainer = {
   visible: {
     pathLength: 1,
     opacity: 1,
-    fill: "#F26622",
+    fill: "rgba(242, 102, 34, 0.5)",
     stroke: "#fff",
   },
 }

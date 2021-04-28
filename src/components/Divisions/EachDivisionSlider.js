@@ -62,10 +62,11 @@ const EachDivisionSlider = ({ images }) => {
                     className="w-full md:w-385px h-400px mx-auto md:mx-0 product-img"
                   />
                 )}
-
-                <h4 className="text-larger font-semibold text-center mt-35px">
-                  {image.imageTitle}
-                </h4>
+                {image.imageTitle && (
+                  <h4 className="text-larger font-semibold text-center mt-35px">
+                    {image.imageTitle}
+                  </h4>
+                )}
               </div>
             )
           })}
@@ -75,14 +76,18 @@ const EachDivisionSlider = ({ images }) => {
       <button
         onClick={prev}
         aria-label="Previous Slide"
-        className="slider-btn slider-btn-prev"
+        className={`slider-btn slider-btn-prev ${
+          images.length <= 3 ? "lg:hidden" : ""
+        }`}
       >
         <CgArrowLeft className="text-3xl" />
       </button>
       <button
         onClick={next}
         aria-label="Next Slide"
-        className="slider-btn slider-btn-next"
+        className={`slider-btn slider-btn-next ${
+          images.length <= 3 ? "lg:hidden" : ""
+        }`}
       >
         <CgArrowRight className="text-3xl" />
       </button>

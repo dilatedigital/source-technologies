@@ -568,14 +568,6 @@ footer a:hover {
   .st-ft-logo-container {
     @apply max-w-450px;
   }
-
-  .each-div-slider .slider-btn {
-    left: -85px;
-  }
-
-  .each-div-slider .slider-btn.slider-btn-next {
-    right: -85px;
-  }
 }
 
 @media screen and (min-width: 1400px) {
@@ -593,6 +585,26 @@ footer a:hover {
   .sub-distribution {
     height: 420px;
     bottom: -50px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .each-div-slider .slider-btn {
+    left: -15px;
+  }
+
+  .each-div-slider .slider-btn.slider-btn-next {
+    right: -15px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .each-div-slider .slider-btn {
+    left: -85px;
+  }
+
+  .each-div-slider .slider-btn.slider-btn-next {
+    right: -85px;
   }
 }
 

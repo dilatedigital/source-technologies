@@ -12,7 +12,7 @@ const textContainer = {
     pathLength: 1,
     opacity: 1,
     fill: "rgba(237, 28, 36, 0.5)",
-    stroke: "#fff",
+    stroke: "rgba(255, 255, 255, 0.5)",
   },
 }
 

@@ -4,7 +4,7 @@ import Slider from "react-slick"
 import { CgArrowLeft, CgArrowRight } from "react-icons/cg"
 
 const EachDivisionSlider = ({ images }) => {
-  console.log(images.length)
+  //console.log(images.length)
   const sourceSlider = useRef(null)
   const next = () => {
     sourceSlider.current.slickNext()

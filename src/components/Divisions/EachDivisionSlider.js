@@ -42,7 +42,6 @@ const EachDivisionSlider = ({ images }) => {
       >
         <Slider {...settings} ref={sourceSlider}>
           {images.map(image => {
-            console.log(image)
             return (
               <div
                 key={image.id}

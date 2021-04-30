@@ -522,6 +522,10 @@ footer a:hover {
   @apply absolute top-0 left-0 w-full h-full;
 }
 
+.slick-initialized .slick-slide {
+  @apply relative;
+}
+
 @media screen and (min-width: 768px) {
   .ReactModal__Content--after-open {
     margin-top: 0;

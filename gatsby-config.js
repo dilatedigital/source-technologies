@@ -67,6 +67,7 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-preact`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-anchor-links`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

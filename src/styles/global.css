@@ -283,7 +283,7 @@
   @apply block;
 } */
 .custom-slider .slider-image-container {
-  @apply w-slider-img-default h-slider-img-default rounded-xl overflow-hidden;
+  @apply w-slider-img-default-sm mx-auto md:mx-0 md:w-slider-img-default h-slider-img-default rounded-xl overflow-hidden;
 }
 
 .custom-slider .slider-image-container .gatsby-image-wrapper,

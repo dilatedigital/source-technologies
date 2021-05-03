@@ -53,7 +53,7 @@ const ProjectSlider = ({ nodes, singleProj }) => {
     <section
       className={`container-md mx-auto relative ${
         slideItems.length <= 3 ? "proj-less-slider" : ""
-      }`}
+      } ${!singleProj ? "" : "mt-8"}`}
     >
       <LightgalleryProvider>
         <Slider
@@ -69,14 +69,18 @@ const ProjectSlider = ({ nodes, singleProj }) => {
             return (
               <div key={slideItem.id}>
                 <div
-                  className={`slider-image-container ${
+                  className={`slider-image-container relative ${
                     slideItems.length <= 3 ? "mx-auto" : ""
                   }`}
                 >
                   {!singleProj ? (
-                    <Link to={`/projects/${slideItem.slug}/`}>
+                    <>
                       <GatsbyImage image={imageData} alt="Project" />
-                    </Link>
+                      <Link
+                        to={`/projects/${slideItem.slug}/`}
+                        class="absolute w-full h-full top-0 left-0"
+                      ></Link>
+                    </>
                   ) : (
                     <LightgalleryItem
                       src={slideItem.localFile.publicURL}

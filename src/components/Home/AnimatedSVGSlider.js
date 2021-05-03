@@ -7,7 +7,7 @@ import ReAnimatedSVG3 from "./ReAnimatedSVG3"
 const AnimatedSVGSlider = () => {
   const [cycle, setCycle] = useCycle(0, 1, 2)
 
-  const svgs = [<ReAnimatedSvg1 />, <ReAnimatedSvg2 />, <ReAnimatedSVG3 />]
+  const svgs = [<ReAnimatedSvg2 />, <ReAnimatedSVG3 />, <ReAnimatedSvg1 />]
 
   useEffect(() => {
     const slideshowTimer = setTimeout(() => {

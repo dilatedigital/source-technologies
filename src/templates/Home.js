@@ -79,6 +79,17 @@ export const query = graphql`
             }
           }
         }
+        heroImageMobile {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                quality: 100
+              )
+            }
+          }
+        }
         showLearnMoreButton
         learnMoreButtonText
         showArrow

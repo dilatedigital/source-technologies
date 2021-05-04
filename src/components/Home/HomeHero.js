@@ -31,6 +31,8 @@ const HomeHero = ({ heroFields }) => {
 
   const bannerImage = getImage(heroFields.heroImage.localFile)
 
+  const bannerImageMobile = getImage(heroFields.heroImageMobile.localFile)
+
   return (
     <section
       className={`hero-section relative h-hero-mobile md:h-inner-hero xl:h-hero flex items-center`}
@@ -67,8 +69,15 @@ const HomeHero = ({ heroFields }) => {
       <div className={`heroImage lg:max-w-full`}>
         <GatsbyImage
           image={bannerImage}
-          alt="Source Technologies Au"
+          alt="Source Technologies AU"
           loading="eager"
+          class="hidden md:block"
+        />
+        <GatsbyImage
+          image={bannerImageMobile}
+          loading="eager"
+          alt="Source Technologies AU"
+          class="md:hidden"
         />
       </div>
 

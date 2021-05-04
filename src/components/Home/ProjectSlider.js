@@ -10,7 +10,7 @@ import "lightgallery/dist/css/lightgallery.min.css"
 import { Link } from "gatsby"
 
 const ProjectSlider = ({ nodes, singleProj }) => {
-  console.log(nodes)
+  //console.log(nodes)
   let slideItems
   if (!singleProj) {
     slideItems = nodes.nodes

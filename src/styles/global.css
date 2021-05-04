@@ -389,6 +389,11 @@
 .st-spinner svg circle {
   @apply opacity-25 stroke-current;
 }
+.svg-security .stroke-opacity,
+.svg-audio .stroke-opacity,
+.svg-automation .stroke-opacity {
+  stroke: rgba(255, 255, 255, 0.5);
+}
 .members-container > div:not(:last-child) {
   @apply mb-12 md:mb-0;
 }

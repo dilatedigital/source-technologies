@@ -71,6 +71,10 @@ const Footer = () => {
         }
         siteGeneralSettings {
           siteSettingsFields {
+            emailFields {
+              emailAddress
+              enquiryType
+            }
             companyName
             email
             phone
@@ -123,7 +127,7 @@ const Footer = () => {
   const termsConditions =
     data.wp.themeFooterSettings.siteFooterFields.termsConditions
 
-  //console.log(termsConditions)
+  //console.log(data.wp.siteGeneralSettings.siteSettingsFields.emailFields)
 
   const { isModalOpen, closeModal, openModal } = useContext(MenuContext)
 
@@ -239,7 +243,9 @@ const Footer = () => {
           shouldCloseOnEsc={true}
           ariaHideApp={false}
         >
-          <ModalForm />
+          <ModalForm
+            emails={data.wp.siteGeneralSettings.siteSettingsFields.emailFields}
+          />
         </Modal>
       </footer>
     </>

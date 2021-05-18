@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react"
+import PropTypes from "prop-types"
 import { MenuContext } from "../../context/MenuContext"
 import { useForm } from "react-hook-form"
 import axios from "axios"
@@ -9,7 +10,7 @@ import Loading from "../../assets/loading.svg"
 
 let recipient
 
-const ModalForm = () => {
+const ModalForm = ({ emails }) => {
   const formLink = process.env.GATSBY_HOMEFORM
 
   const { register, handleSubmit, errors, formState } = useForm({
@@ -25,28 +26,31 @@ const ModalForm = () => {
   const { closeModal } = useContext(MenuContext)
 
   const handleRecipient = value => {
-    switch (value) {
-      case "Audio":
-        recipient = "audioenquiries@sourcetechnologies.com.au"
-        break
-      case "Automation":
-        recipient = "automationenquiries@sourcetechnologies.com.au"
-        break
-      case "Intrusion":
-        recipient = "intrusionenquiries@sourcetechnologies.com.au"
-        break
-      case "Video":
-        recipient = "videoenquiries@sourcetechnologies.com.au"
-        break
-      case "Accounts":
-        recipient = "accountenquiries@sourcetechnologies.com.au"
-        break
-      case "Other":
-        recipient = "otherenquiries@sourcetechnologies.com.au"
-        break
-      default:
-        recipient = "info@sourcetechnologies.com.au"
-    }
+    let emailResult = emails.filter(email => email.enquiryType === value)
+    recipient = emailResult[0].emailAddress
+
+    // switch (value) {
+    //   case "Audio":
+    //     recipient = "audioenquiries@sourcetechnologies.com.au"
+    //     break
+    //   case "Automation":
+    //     recipient = "automationenquiries@sourcetechnologies.com.au"
+    //     break
+    //   case "Intrusion":
+    //     recipient = "intrusionenquiries@sourcetechnologies.com.au"
+    //     break
+    //   case "Video":
+    //     recipient = "videoenquiries@sourcetechnologies.com.au"
+    //     break
+    //   case "Accounts":
+    //     recipient = "accountenquiries@sourcetechnologies.com.au"
+    //     break
+    //   case "Other":
+    //     recipient = "otherenquiries@sourcetechnologies.com.au"
+    //     break
+    //   default:
+    //     recipient = "info@sourcetechnologies.com.au"
+    // }
   }
 
   const onSubmit = data => {
@@ -237,13 +241,11 @@ const ModalForm = () => {
                   }}
                 >
                   <option value="">Please select</option>
-                  <option value="Audio">Audio</option>
-                  <option value="Automation">Automation</option>
-                  <option value="Distribution">Distribution</option>
-                  <option value="Intrusion">Intrusion</option>
-                  <option value="Video">Video</option>
-                  <option value="Accounts">Accounts</option>
-                  <option value="Other">Other</option>
+                  {emails.map(email => (
+                    <option key={email.enquiryType} value={email.enquiryType}>
+                      {email.enquiryType}
+                    </option>
+                  ))}
                 </select>
                 <FiChevronDown className="absolute" />
                 {errors.enquiryType && errors.enquiryType.message && (
@@ -282,10 +284,17 @@ const ModalForm = () => {
         </form>
       )}
       {isFormSubmitted && (
-        <div>Thank you! We will get back to you shortly.</div>
+        <div>
+          Thank you for your enquiry, we will be in touch with you within 2
+          business days.
+        </div>
       )}
     </div>
   )
+}
+
+ModalForm.propTypes = {
+  emails: PropTypes.array.isRequired,
 }
 
 export default ModalForm

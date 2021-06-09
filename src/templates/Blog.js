@@ -89,7 +89,7 @@ const Blog = ({ data: { wpPage }, data: { allWpPost }, pageContext }) => {
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    allWpPost(skip: $skip, limit: $limit) {
+    allWpPost(skip: $skip, limit: $limit, sort: { order: DESC, fields: date }) {
       edges {
         node {
           uri

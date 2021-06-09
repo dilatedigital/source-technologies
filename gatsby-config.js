@@ -13,9 +13,18 @@ module.exports = {
     description: `Gatsby powered site for Source Technologies`,
     author: `Dilate Digital - Jejomar Dorongon`,
     image: "/default_img.jpg",
-    siteUrl: `https://eloquent-bassi-0b077d.netlify.app/`,
+    siteUrl: `https://sourcetechnologies.com.au/`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-G18PEBW8EK",
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,7 +36,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-no-index`,
     {
       resolve: `gatsby-source-wordpress`,
       options: {

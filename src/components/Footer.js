@@ -147,20 +147,24 @@ const Footer = () => {
               </Link>
 
               <div className="flex justify-center flex-col items-center lg:flex-row lg:justify-start">
-                <GatsbyImage
-                  fluid={
-                    siteFooterFields.australianOwnedImg.localFile
-                      .childImageSharp.fluid
-                  }
-                  className="ao-logo w-full"
-                  alt={siteFooterFields.australianOwnedText}
-                />
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: siteFooterFields.australianOwnedText,
-                  }}
-                  className="font-pop font-medium lg:ml-4"
-                />
+                {siteFooterFields.australianOwnedImg && (
+                  <GatsbyImage
+                    fluid={
+                      siteFooterFields.australianOwnedImg.localFile
+                        .childImageSharp.fluid
+                    }
+                    className="ao-logo w-full"
+                    alt={siteFooterFields.australianOwnedText}
+                  />
+                )}
+                {siteFooterFields.australianOwnedText && (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: siteFooterFields.australianOwnedText,
+                    }}
+                    className="font-pop font-medium lg:ml-4"
+                  />
+                )}
               </div>
             </div>
             <FooterCol
